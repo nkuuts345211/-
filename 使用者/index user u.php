@@ -3,40 +3,46 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>index user u</title>
+        <title>首頁</title>
     </head>
-    <body>
+    <body align="center">
         <style>
-            body {
+            body,
+            html {
                 margin: 0;
+                height: 100%;
+                padding: 0;
+
             }
             table {
+                text-align: "center";
+                border: 1px solid gray;
                 width: 100%;
-                border: 1px solid red;
-                text-align: center;
+                border-collapse: collapse;
+
             }
 
-            #main {
-                height: 80%;
-                width: 80%;
+            #top {
+                height: 10%;
+                background-color: gray;
             }
-            #button {
-                height: 80%;
-                width: 10%;
-            }
+            img{
+ width: 100%;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 20px;
+ text-align: center;
+}
+.myimg{
+ width: 70%;
+ height:40%;
+}
         </style>
-        <table>
-            <tr >
-                <div class="imgtop">
-                    <td >
-                        <a href="">
-                            <img
-                                src="https://th.bing.com/th/id/OIP.uJ3LwA66fuITtZYomVqz-AHaD4?w=339&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                                height="50px"
-                                width="100px"></a>
-                    </td>
-                </div>
-
+        <table >
+            <tr id="top">
+                <td>
+                    <a href="">首頁</a>
+                </td>
                 <td>
                     <a href="">菜單</a>
                 </td>
@@ -50,34 +56,77 @@
                     <a href="">登出</a>
                 </td>
             </tr>
-            <tr >
+            <tr>
+                <td colspan="5"><h1>歡迎使用者</h1></td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="back">back</button>
+                </td>
+                <td colspan="3" align="center"><img src="http://localhost/img/menu1.jpg" id="myimg" class="img"></td>
+                <td>
+                    <button id="next">next</button>
+                </td>
 
             </tr>
-            <tr>
-                <td>製作者</td>
-                <td>連結</td>
-                <td>留言板</td>
+<script>
+    alert("歡迎使用者")
+    let img = document.getElementById("myimg");
+    let back=document.getElementById("back");
+    let next=document.getElementById("next");
+    let imga=["http://localhost/img/menu1.jpg","http://localhost/img/menu2.jpg","http://localhost/img/menu3.jpg","http://localhost/img/menu4.jpg","http://localhost/img/menu5.jpg"];
+    let index=0;
+    function backimg(event){
+index--;
+if(index<0){
+    index=imga.length-1;
+
+}
+img.src=imga[index];
+    }
+
+    function nextimg(event){
+        index++;
+        if(index>imga.length-1){
+            index=0;
+        }
+        img.src=imga[index];
+    }
+    back.addEventListener('click',backimg);
+    next.addEventListener('click',nextimg);
+</script>
+            <tr >
+                <table>
+                    <tr>
+                        <td>製作人</td>
+                        <td>連結</td>
+                        <td ><a href="">留言板</a></td>
+                    </tr>
+                    <tr>
+                        <td>鄧益汯</td>
+                        <td>
+                            <a href="https://www.ukn.edu.tw/p/412-1000-381.php?Lang=zh-tw">KNJC</a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>黃聖翔</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>黃子杰</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>楊恩愷</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
             </tr>
-            <tr>
-                <td>鄧益汯</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>黃聖翔</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>黃子杰</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>楊恩愷</td>
-                <td></td>
-                <td></td>
-            </tr>
+
         </table>
     </body>
 </html>
