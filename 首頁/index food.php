@@ -1,32 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <?php include "db.php"?>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>菜單首頁</title>
-    <style>
-#a1{
-    background-color: gray;
-}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>首頁</title>
+    </head>
+    <body align="center">
+        <link rel="stylesheet" href="style/style.css">
+        <style>
+           
+        </style>
+        <table >
+            <tr id="top">
+                <td>
+                    <a href="">首頁</a>
+                </td>
+                <td>
+                    菜單
+                </td>
+                <td>
+                    <a href="">訂餐</a>
+                </td>
+                <td>
+                    <a href="">登入</a>
+                </td>
+                <td>
+                    <a href="">註冊</a>
+                </td>
+            </tr>
+            <div class="main">
+                <tr>
+                    <td colspan="5">目前位置➝菜單
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="back">back</button>
+                    </td>
+                    <td colspan="3" align="center"><img src="http://localhost/img/menu1.jpg" id="myimg" class="img"></td>
+                    <td>
+                        <button id="next">next</button>
+                    </td>
 
-    </style>
-</head>
-<body align="center">
-    
-    <div id="a1">
-<table align="center" >
-    <tr>
-        
-        <td><a href="http://localhost/%e9%a6%96%e9%a0%81/index%20login.php"><img src="https://th.bing.com/th/id/OIP.tyEHuivrhydAWDxiTRzrfAAAAA?w=137&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" height="50px" width="50px"></a></td>
-        <td ><a href="http://localhost/%e8%a8%82%e5%96%ae/menu.php">菜單簡介</a></td>
-        
-        
-        
-        <td ><a href="http://localhost/%e7%ae%a1%e7%90%86%e5%93%a1/add%20user.php">註冊</a></td>
-    </tr>
-</table>
-    </div>
-    
-</body>
+                </tr>
+            </div>
+            <script>
+                let img = document.getElementById("myimg");
+                let back = document.getElementById("back");
+                let next = document.getElementById("next");
+                let imga = ["http://localhost/img/menu1.jpg", "http://localhost/img/menu2.jpg", "http://localhost/img/menu3.jpg", "http://localhost/img/menu4.jpg", "http://localhost/img/menu5.jpg"];
+                let index = 0;
+                function backimg(event) {
+                    index--;
+                    if (index < 0) {
+                        index = imga.length - 1;
+
+                    }
+                    img.src = imga[index];
+                }
+
+                function nextimg(event) {
+                    index++;
+                    if (index > imga.length - 1) {
+                        index = 0;
+                    }
+                    img.src = imga[index];
+                }
+                back.addEventListener('click', backimg);
+                next.addEventListener('click', nextimg);
+            </script>
+            <tr >
+                <footer class="footer">
+                    <table>
+                        <tr>
+                            <td>製作人</td>
+                            <td>連結</td>
+                            <td >
+                                <a href="">留言板</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>鄧益汯</td>
+                            <td>
+                                <a href="https://www.ukn.edu.tw/p/412-1000-381.php?Lang=zh-tw">KNJC</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>黃聖翔</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>黃子杰</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>楊恩愷</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </footer>
+            </tr>
+
+        </table>
+    </body>
 </html>

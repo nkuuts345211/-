@@ -41,7 +41,7 @@
     <td><input type="text" name="password" ></td>
 </tr>
 <tr>
-    <td ><input type="submit" value="送出"></td>
+    <td colspan="2"><input type="submit" value="送出"></td>
 </tr>
         </table>
     </form>
