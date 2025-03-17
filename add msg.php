@@ -6,38 +6,7 @@
         <title>首頁</title>
     </head>
     <body align="center">
-        <style>
-            body,
-            html {
-                margin: 0;
-                height: 100%;
-                padding: 0;
-
-            }
-            table {
-                text-align: "center";
-                border: 1px solid gray;
-                width: 100%;
-                border-collapse: collapse;
-
-            }
-
-            #top {
-                height: 10%;
-                background-color: gray;
-            }
-            img{
- width: 100%;
- margin-left: auto;
- margin-right: auto;
- margin-top: 20px;
- text-align: center;
-}
-.myimg{
- width: 70%;
- height:40%;
-}
-        </style>
+        <link rel="stylesheet" href="style/style.css">
         <table >
             <tr id="top">
                 <td>
