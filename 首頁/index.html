@@ -6,8 +6,9 @@
         <title>首頁</title>
     </head>
     <body align="center">
-       <link rel="stylesheet" href="style/style.css">
-       <script src="script/script.js"></script>
+
+        <link rel="stylesheet" href="style/style.css">
+
         <table >
             <tr id="top">
                 <td>
@@ -31,11 +32,11 @@
             </tr>
             <tr>
                 <td>
-                    <button id="back">back</button>
+                    <button id="prevButton">back</button>
                 </td>
-                <td colspan="3" align="center"><img src="http://localhost/img/menu1.jpg" id="myimg" class="img"></td>
+                <td colspan="3" align="center"><img src="/img/menu1.jpg" id="myimg"></td>
                 <td>
-                    <button id="next">next</button>
+                    <button id="nextButton">next</button>
                 </td>
 
             </tr>
@@ -50,14 +51,13 @@
                     </tr>
                     <tr>
                         <td>鄧益汯</td>
-                        <td>
-                            <a href="https://www.ukn.edu.tw/p/412-1000-381.php?Lang=zh-tw">KNJC</a>
+                        <td rowspan="2">
+                            <button onclick="play()" class="button1">播放音樂按鈕</button>
                         </td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>黃聖翔</td>
-                        <td></td>
                         <td></td>
                     </tr>
                     <tr>
@@ -74,5 +74,42 @@
             </tr>
 
         </table>
+
+        <iframe
+            id="music"
+            src="https://youtube.com/embed/maigqMT9KPw?si=SHHwMfUWOepodXwr&controls=0&showinfo=0&autohide=1"
+            frameborder="0"
+            allow="autoplay"
+            style="width:0; height:0; border:none;"></iframe>
+        <script>
+            function play() {
+                let iframe = document.getElementById("music");
+                iframe.src += "&autoplay=1";
+            }
+            const images = ['/img/menu1.jpg', '/img/menu2.jpg', '/img/menu3.jpg', '/img/menu4.jpg', '/img/menu5.jpg'];
+
+            let currentIndex = 0;
+
+            function updateImage() {
+                document
+                    .getElementById('myimg')
+                    .src = images[currentIndex];
+            }
+
+            document
+                .getElementById('prevButton')
+                .addEventListener('click', function () {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    updateImage();
+                });
+
+            document
+                .getElementById('nextButton')
+                .addEventListener('click', function () {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    updateImage();
+                });
+        </script>
+
     </body>
 </html>
