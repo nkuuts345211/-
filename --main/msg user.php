@@ -6,42 +6,13 @@
         <title>首頁</title>
     </head>
     <body align="center">
-        <style>
-            body,
-            html {
-                margin: 0;
-                height: 100%;
-                padding: 0;
 
-            }
-            table {
-                text-align: "center";
-                border: 1px solid gray;
-                width: 100%;
-                border-collapse: collapse;
+        <link rel="stylesheet" href="/首頁/style/style.css">
 
-            }
-
-            #top {
-                height: 10%;
-                background-color: gray;
-            }
-            img{
- width: 100%;
- margin-left: auto;
- margin-right: auto;
- margin-top: 20px;
- text-align: center;
-}
-.myimg{
- width: 70%;
- height:40%;
-}
-        </style>
         <table >
             <tr id="top">
                 <td>
-                    <a href="">首頁</a>
+                    首頁
                 </td>
                 <td>
                     <a href="">菜單</a>
@@ -50,64 +21,43 @@
                     <a href="">訂餐</a>
                 </td>
                 <td>
-                    <a href="">查看訂單 </a>
+                    <a href="">查看訂單</a>
                 </td>
                 <td>
                     <a href="">登出</a>
                 </td>
             </tr>
             <tr>
+                <td colspan="5">目前位置➝使用者留言板</td>
+            </tr>
+            <tr>
                 <td>
-                    <button id="back">back</button>
+                    <button id="prevButton">back</button>
                 </td>
-                <td colspan="3" align="center"><img src="http://localhost/img/menu1.jpg" id="myimg" class="img"></td>
+                <td colspan="3" align="center"><img src="/img/menu1.jpg" id="myimg"></td>
                 <td>
-                    <button id="next">next</button>
+                    <button id="nextButton">next</button>
                 </td>
 
             </tr>
-<script>
-    let img = document.getElementById("myimg");
-    let back=document.getElementById("back");
-    let next=document.getElementById("next");
-    let imga=["http://localhost/img/menu1.jpg","http://localhost/img/menu2.jpg","http://localhost/img/menu3.jpg","http://localhost/img/menu4.jpg","http://localhost/img/menu5.jpg"];
-    let index=0;
-    function backimg(event){
-index--;
-if(index<0){
-    index=imga.length-1;
-
-}
-img.src=imga[index];
-    }
-
-    function nextimg(event){
-        index++;
-        if(index>imga.length-1){
-            index=0;
-        }
-        img.src=imga[index];
-    }
-    back.addEventListener('click',backimg);
-    next.addEventListener('click',nextimg);
-</script>
             <tr >
                 <table>
                     <tr>
                         <td>製作人</td>
                         <td>連結</td>
-                        <td ><a href="">留言板</a></td>
+                        <td >
+                            <a href="">留言板</a>
+                        </td>
                     </tr>
                     <tr>
                         <td>鄧益汯</td>
-                        <td>
-                            <a href="https://www.ukn.edu.tw/p/412-1000-381.php?Lang=zh-tw">KNJC</a>
+                        <td rowspan="2">
+                            <button onclick="play()" class="button1">播放音樂按鈕</button>
                         </td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>黃聖翔</td>
-                        <td></td>
                         <td></td>
                     </tr>
                     <tr>
@@ -122,7 +72,43 @@ img.src=imga[index];
                     </tr>
                 </table>
             </tr>
-
         </table>
+
+        <iframe
+            id="music"
+            src="https://youtube.com/embed/maigqMT9KPw?si=SHHwMfUWOepodXwr&controls=0&showinfo=0&autohide=1"
+            frameborder="0"
+            allow="autoplay"
+            style="width:0; height:0; border:none;"></iframe>
+        <script>
+            function play() {
+                let iframe = document.getElementById("music");
+                iframe.src += "&autoplay=1";
+            }
+            const images = ['/img/menu1.jpg', '/img/menu2.jpg', '/img/menu3.jpg', '/img/menu4.jpg', '/img/menu5.jpg'];
+
+            let currentIndex = 0;
+
+            function updateImage() {
+                document
+                    .getElementById('myimg')
+                    .src = images[currentIndex];
+            }
+
+            document
+                .getElementById('prevButton')
+                .addEventListener('click', function () {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    updateImage();
+                });
+
+            document
+                .getElementById('nextButton')
+                .addEventListener('click', function () {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    updateImage();
+                });
+        </script>
+
     </body>
 </html>
