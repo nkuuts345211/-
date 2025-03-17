@@ -12,18 +12,18 @@
         <table >
             <tr id="top">
                 <td>
-                    <a href="/首頁/index.html">首頁</a>
+                    <a href="index.html">首頁</a>
                 </td>
                 <td>菜單
                 </td>
                 <td>
-                    <a href="/首頁/index login.php">訂餐</a>
+                    <a href="index login.php">訂餐</a>
                 </td>
                 <td>
-                    <a href="/首頁/index login.php">登入</a>
+                    <a href="index login.php">登入</a>
                 </td>
                 <td>
-                    <a href="/管理員/add user.php">註冊</a>
+                    <a href="add user.php">註冊</a>
                 </td>
             </tr>
             <tr>
@@ -43,7 +43,7 @@
                         <td>製作人</td>
                         <td>連結</td>
                         <td >
-                            <a href="msg">留言板</a>
+                            <a href="main.php">留言板</a>
                         </td>
                     </tr>
                     <tr>
