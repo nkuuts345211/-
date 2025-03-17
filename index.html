@@ -47,7 +47,7 @@
                         <td>製作人</td>
                         <td>連結</td>
                         <td >
-                            <a href="main.php">留言板</a>
+                            <a href="">留言板</a>
                         </td>
                     </tr>
                     <tr>
@@ -58,7 +58,7 @@
                     </tr>
                     <tr>
                         <td>黃聖翔</td>
-                        <td onclick="play()">播放音樂</td>
+                        <td ><button onclick="play()">播放音樂</button></td>
                     </tr>
                     <tr>
                         <td>黃子杰</td>
@@ -75,12 +75,15 @@
 
         </table>
 
-        <iframe
-            id="music"
-            src="https://youtube.com/embed/maigqMT9KPw?si=SHHwMfUWOepodXwr&controls=0&showinfo=0&autohide=1"
-            frameborder="0"
-            allow="autoplay"
-            style="width:0; height:0; border:none;"></iframe>
+        <iframe src="https://www.youtube.com/embed/Df_pGKwDJDU?autoplay=1&controls=0&showinfo=0&modestbranding=1" 
+        id="music"
+        frameborder="0" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; visibility: hidden; pointer-events: none; z-index: -1;" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+</iframe>
+
+
         <script>
             alert('音樂部分需直接點擊文字');
             function play() {
