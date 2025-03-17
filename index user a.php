@@ -5,129 +5,66 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>首頁</title>
     </head>
-    <body>
-        <style>
-            * {
-                padding: 0px;
-                margin: 0px;
-            }
-            body html {
-                height: 100%;
-            }
-            table {
-                width: 100%;
-                border: 1px solid red;
-                text-align: center;
-            }
+    <body align="center">
 
-            #main {
-                height: 80%;
-                width: 80%;
-            }
-            #button {
-                height: 80%;
-                width: 10%;
-            }
-            #top {
-                background-color: gray;
-            }
-            #footer{
-margin-top:-50px ;
-height:10%;
-z-index: 9999;
-            }
-        </style>
-        <table>
-            <tr >
-                <div >
-                    <td >
-                        <a href="http://localhost/%e9%a6%96%e9%a0%81/">
-                            <img
-                                src="https://th.bing.com/th/id/OIP.uJ3LwA66fuITtZYomVqz-AHaD4?w=339&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                                height="50px"
-                                width="100px"></a>
-                    </td>
+        <link rel="stylesheet" href="style/style.css">
 
-                    <td>
-                        <a href="index food.php">菜單</a>
-                    </td>
-                    <td>
-                        <a href="order user a.php">訂餐</a>
-                    </td>
-                    <td>
-                        <a href="del menu.php">刪除訂單</a>
-                    </td>
-                    <td>
-                        <a href="logout.php">登出</a>
-                    </td>
-                </tr>
-            </div>
+        <table >
+            <tr id="top">
+                <td>
+                    首頁
+                </td>
+                <td>
+                    <a href="index food.php">菜單</a>
+                </td>
+                <td>
+                    <a href="index login.php">訂餐</a>
+                </td>
+                <td>
+                    <a href="index login.php">登入</a>
+                </td>
+                <td>
+                    <a href="add user.php">註冊</a>
+                </td>
+            </tr>
             <tr>
-                <td colspan="5">
-                    <marquee
+                <td colspan="5"><marquee
                         scrolldelay="10"
                         width="100%"
-                        bgcolor="black"
+                        bgcolor="red"
                         behavior="scroll"
                         direction="right"
                         style="color: white;"
-                        height="5%">資二忠餐廳訂餐系統</marquee>
-                </td>
-            </tr>
-            <tr >
-                <td class="button">
-                    <button id="back" onclick="back()">back</button>
-                </td>
-                <td colspan="3" class="main"><img src="http://localhost/img/1.jpg" id="changeimg"></td>
-
-                <td class="button">
-                    <button id="next" onclick="next()">next</button>
-                </td>
-                <script>
-                    var img = document.getElementById("changeimg");
-
-                    var index = 0;
-                    var a = ["http://localhost/img/1.jpg", "http://localhost/img/2.jpg", "http://localhost/img/3.jpg"]
-                    var imgs = document.getElementsByTagName("img");
-                    var len = a.length;
-                    var al = document.getElementById("back");
-                    var ar = document.getElementById("right");
-                    var n = 0;
-                    function next() {
-
-                        imgs.src = a[n];
-                        if (n < (len-1)) {
-                            n++;
-                        } else {
-                            n = 0;
-                        }
-                    }
-                    function back() {
-                        imgs.src = a[n];
-                        if (n > 0) {
-                            n--;
-                        } else {
-                            n = (len - 1);
-                        }
-                    }
-                </script>
+                        height="5%">資二忠餐廳訂餐系統</marquee></td>
             </tr>
             <tr>
-                <table calss="footer">
+                <td>
+                    <button id="prevButton">back</button>
+                </td>
+                <td colspan="3" align="center"><img src="/img/menu1.jpg" id="myimg"></td>
+                <td>
+                    <button id="nextButton">next</button>
+                </td>
+
+            </tr>
+            <tr >
+                <table class="footer">
                     <tr>
                         <td>製作人</td>
                         <td>連結</td>
-                        <td rowspan="5">留言板</td>
+                        <td >
+                            <a href="add msg.php">留言板</a>
+                        </td>
                     </tr>
                     <tr>
                         <td>鄧益汯</td>
-                        <td></td>
+                        <td>
+                        </td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>黃聖翔</td>
-                        <td></td>
-                        <td></td>
+                        <td ><button onclick="play()">播放音樂</button></td>
                     </tr>
                     <tr>
                         <td>黃子杰</td>
@@ -139,9 +76,50 @@ z-index: 9999;
                         <td></td>
                         <td></td>
                     </tr>
-
                 </table>
             </tr>
+
         </table>
+
+        <iframe src="https://www.youtube.com/embed/Df_pGKwDJDU?autoplay=1&controls=0&showinfo=0&modestbranding=1" 
+        id="music"
+        frameborder="0" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; visibility: hidden; pointer-events: none; z-index: -1;" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+</iframe>
+
+
+        <script>
+            
+            function play() {
+                let iframe = document.getElementById("music");
+                iframe.src += "&autoplay=1";
+            }
+            const images = ['/img/menu1.jpg', '/img/menu2.jpg', '/img/menu3.jpg', '/img/menu4.jpg', '/img/menu5.jpg'];
+
+            let currentIndex = 0;
+
+            function updateImage() {
+                document
+                    .getElementById('myimg')
+                    .src = images[currentIndex];
+            }
+
+            document
+                .getElementById('prevButton')
+                .addEventListener('click', function () {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    updateImage();
+                });
+
+            document
+                .getElementById('nextButton')
+                .addEventListener('click', function () {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    updateImage();
+                });
+        </script>
+
     </body>
 </html>
