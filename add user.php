@@ -21,7 +21,7 @@
                 
             </tr>
             <tr>
-                <td>你的鳴子</td>
+                <td>你的名字</td>
                 <td><input type="text" name="name"></td>
                 
             </tr>
