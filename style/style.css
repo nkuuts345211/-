@@ -13,7 +13,7 @@ table {
 .header {
     height: 50px;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: orange;
     font-size: 20px;
     font-weight: bold;
 }
@@ -30,4 +30,16 @@ table {
 #myimg{
     height: 70%;
     width: auto;
+}
+.Indicator{
+    background-color: lightblue;
+    color: darkblue;
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    background-color: lightblue;
+    color: darkred;
 }
