@@ -12,20 +12,15 @@
         <table >
             <tr id="top">
                 <td>
-                    首頁
+                    <a href="index user a.php">首頁</a>
                 </td>
                 <td>
                     <a href="index food.php">菜單</a>
                 </td>
                 <td>
-                    <a href="index login.php">訂餐</a>
+                    <a href="">訂餐</a>
                 </td>
-                <td>
-                    <a href="index login.php">登入</a>
-                </td>
-                <td>
-                    <a href="add user.php">註冊</a>
-                </td>
+                
             </tr>
             <tr>
                 <td colspan="5"><marquee

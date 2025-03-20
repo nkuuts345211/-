@@ -27,11 +27,11 @@
             <tr>
                 <td class="content"><table>
                     <tr>
-                    <td><img src="\img\menu1.jpg" ></td>
-                    <td><img src="\img\menu2.jpg" ></td>
-                    <td><img src="\img\menu3.jpg" ></td>
-                    <td><img src="\img\menu4.jpg" ></td>
-                    <td><img src="\img\menu5.jpg" ></td>
+                    <td><img src="\img\menu1.jpg" onclick="menu1()"></td>
+                    <td><img src="\img\menu2.jpg" onclick="menu2()"></td>
+                    <td><img src="\img\menu3.jpg" onclick="menu3()"></td>
+                    <td><img src="\img\menu4.jpg" onclick="menu4()"></td>
+                    <td><img src="\img\menu5.jpg" onclick="menu5()"></td>
                 </tr>
                 </table></td>
             </tr>
@@ -63,6 +63,22 @@
                 </td>
             </tr>
         </table>
-       
+       <script>
+        function menu1(){
+            alert("菜品介紹");
+        }
+        function menu2(){
+            alert("菜品介紹");
+        }
+        function menu3(){
+            alert("菜品介紹");
+        }
+        function menu4(){
+            alert("菜品介紹");
+        }
+        function menu5(){
+            alert("菜品介紹");
+        }
+       </script>
     </body>
 </html>
