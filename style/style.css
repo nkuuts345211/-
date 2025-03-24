@@ -13,7 +13,7 @@ table {
 .header {
     height: 50px;
     text-align: center;
-    background-color: orange;
+    background-color: blueviolet;
     font-size: 20px;
     font-weight: bold;
 }
@@ -33,13 +33,17 @@ table {
 }
 .Indicator{
     background-color: lightblue;
-    color: darkblue;
+    color: black;
     font-size: 18px;
 }
 a{
     text-decoration: none;
+    color: white;
 }
 a:hover{
     background-color: lightblue;
     color: darkred;
+}
+.blk{
+    background-image: "img\OIP.jpg";
 }
