@@ -12,7 +12,7 @@
                 <td class="header">
                     <table>
                         <tr>
-                            <td><a href="index.html">首頁</a></td>
+                            <td><a href="index.php">首頁</a></td>
                             <td><a href="index food.php">菜單</a></td>
                             <td><a href="index login.php">訂餐</a></td>
                             <td><a href="index login.php">登入</a></td>
