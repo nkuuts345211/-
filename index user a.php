@@ -1,89 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>首頁</title>
+        <title>管理者首頁</title>
+        <link rel="stylesheet" href="style/user a.css">
     </head>
-    <body align="center">
-
-        <link rel="stylesheet" href="style/style.css">
-
-        <table >
-            <tr id="top">
-                <td>
-                    <a href="index user a.php">首頁</a>
+    <body>
+        <table>
+            <tr>
+                <td class="header">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="index user a.php">首頁</a>
+                            </td>
+                            <td>
+                                <a href="index food.php">菜單</a>
+                            </td>
+                            <td>
+                                <a href="order user a.php">訂餐</a>
+                            </td>
+                            
+                        </tr>
+                    </table>
                 </td>
-                <td>
-                    <a href="index food.php">菜單</a>
-                </td>
-                <td>
-                    <a href="">訂餐</a>
-                </td>
-                
             </tr>
             <tr>
-                <td colspan="5"><marquee
-                        scrolldelay="10"
-                        width="100%"
-                        bgcolor="red"
-                        behavior="scroll"
-                        direction="right"
-                        style="color: white;"
-                        height="5%">資二忠餐廳訂餐系統</marquee></td>
-            </tr>
-            <tr>
-                <td>
-                    <button id="prevButton">back</button>
-                </td>
-                <td colspan="3" align="center"><img src="/img/menu1.jpg" id="myimg"></td>
-                <td>
-                    <button id="nextButton">next</button>
-                </td>
-
+                <td colspan="5" align="center" class="Indicator">目前位置➝管理者首頁</td>
             </tr>
             <tr >
-                <table class="footer">
-                    <tr>
-                        <td>製作人</td>
-                        <td>連結</td>
-                        <td >
-                            <a href="add msg.php">留言板</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>鄧益汯</td>
-                        <td>
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>黃聖翔</td>
-                        <td ><button onclick="play()">播放音樂</button></td>
-                    </tr>
-                    <tr>
-                        <td>黃子杰</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>楊恩愷</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
+                <td class="content">
+                    <table>
+                        <tr>
+                            <td>
+                                <button id="prevButton">back</button>
+                            </td>
+                            <td><img src="\img\menu1.jpg" id="myimg"></td>
+                            <td>
+                                <button id="nextButton">next</button>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
             </tr>
-
-        </table>
-
-        <iframe src="https://www.youtube.com/embed/Df_pGKwDJDU?autoplay=1&controls=0&showinfo=0&modestbranding=1" 
-        id="music"
-        frameborder="0" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; visibility: hidden; pointer-events: none; z-index: -1;" 
-        allow="autoplay; encrypted-media" 
-        allowfullscreen>
-</iframe>
-
+            <tr>
+                <td class="footer">
+                    <table>
+                        <tr>
+                            <td>製作人</td>
+                            <td>連結</td>
+                            <td>
+                                <a href="add msg.php">留言板</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>鄧益汯</td>
+                            <td>
+                                <button onclick="play()">播放音樂</button>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>黃聖翔</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>黃子杰</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>楊恩愷</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+        </table><iframe
+        src="https://www.youtube.com/embed/Df_pGKwDJDU?autoplay=1&loop=1&playlist=maigqMT9KPw&controls=0&showinfo=0&autohide=1"
+        frameborder="0"
+        allow="autoplay"
+        style="width:0; height:0; border:none;"
+        id="music"></iframe>
 
         <script>
             
@@ -115,6 +117,5 @@
                     updateImage();
                 });
         </script>
-
     </body>
 </html>

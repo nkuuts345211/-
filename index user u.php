@@ -11,9 +11,7 @@
 
         <table >
             <tr id="top">
-                <td>
-                    首頁
-                </td>
+                <td><a href="index user u.php">首頁</a></td>
                 <td>
                     <a href="index food.php">菜單</a>
                 </td>
