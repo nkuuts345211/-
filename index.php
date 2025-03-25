@@ -55,9 +55,7 @@
                         <tr>
                             <td>製作人</td>
                             <td>連結</td>
-                            <td>
-                                <a href="add msg.php">留言板</a>
-                            </td>
+                            <td> </td>
                         </tr>
                         <tr>
                             <td>鄧益汯</td>
