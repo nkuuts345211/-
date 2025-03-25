@@ -7,7 +7,7 @@
     </head>
     <body align="center">
 
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/user.css">
 
         <table >
             <tr id="top">
