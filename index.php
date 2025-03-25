@@ -13,7 +13,7 @@
                     <table>
                         <tr>
                             <td>
-                                <a href="index.html">首頁</a>
+                                <a href="index.php">首頁</a>
                             </td>
                             <td>
                                 <a href="index food.php">菜單</a>
