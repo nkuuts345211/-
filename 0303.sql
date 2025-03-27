@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2025-03-03 10:07:09
--- 伺服器版本： 10.4.24-MariaDB
--- PHP 版本： 7.4.29
+-- 產生時間： 2025-03-27 07:09:01
+-- 伺服器版本： 10.4.32-MariaDB
+-- PHP 版本： 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫： `0224`
+-- 資料庫： `0303`
 --
 
 -- --------------------------------------------------------
@@ -34,7 +34,7 @@ CREATE TABLE `food` (
   `c_money` int(11) NOT NULL,
   `img` int(11) NOT NULL,
   `add_time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -50,7 +50,21 @@ CREATE TABLE `msg` (
   `img` text NOT NULL,
   `add_time` datetime NOT NULL,
   `up_time` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `order`
+--
+
+CREATE TABLE `order` (
+  `id` int(11) NOT NULL,
+  `account` varchar(20) NOT NULL,
+  `c_num` varchar(20) NOT NULL,
+  `c_name` varchar(20) NOT NULL,
+  `c_money` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -64,7 +78,7 @@ CREATE TABLE `user` (
   `password` varchar(20) NOT NULL,
   `name` varchar(20) NOT NULL,
   `type` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `user`
@@ -92,6 +106,12 @@ ALTER TABLE `msg`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `user`
 --
 ALTER TABLE `user`
@@ -112,6 +132,12 @@ ALTER TABLE `food`
 --
 ALTER TABLE `msg`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `order`
+--
+ALTER TABLE `order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `user`
