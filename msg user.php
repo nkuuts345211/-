@@ -48,7 +48,7 @@
         }
         
     ?>
-    <input type="button" value="登出" onclick=location.href="logout.php">
+    
     </form>
 </body>
 </html>

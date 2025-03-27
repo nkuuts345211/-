@@ -6,7 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body align="center">
+<body align="center"><style>
+        .head{
+            text-align: center;
+        }
+    </style>
+<div class="head">    
+<a href="index user u.php">首頁</a>
+    <a href="index user u food.php">菜單</a>
+    <a href="order user u.php">訂餐</a>
+    <a href="logout.php">登出</a>
+    </div>
 <form action="add2.php" method="post">
     <h1>😎留言版<br>歡迎<?php echo $_SESSION['name']; ?></h1>
     <input type="button" value="新增" onclick=location.href="add.php?id='.$row['id'].'">
@@ -23,11 +33,9 @@
                 echo "<tr style='height:400px'><td colspan='2'>".'留言:'.$row["text"]."</td></tr>";
                 echo "<tr style='height:50px'>";
                 echo "<td>".'發佈時間:'.$row["add_time"].'　更新時間:'.$row["up_time"]."</td>";
-                if($_SESSION["account"]==$row["account"]){
+                
                     echo "<td><input type='button' value='刪除' onclick=location.href='del.php?id=".$row['id']."'></td>";
-                }else{
-                    echo "<td></td>";
-                }
+                
                 echo "</tr>";
                 echo "<br>";
                 echo "</table>";

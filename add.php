@@ -4,7 +4,7 @@
     <?php include("db.php"); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11253413楊恩愷</title>
+    <title>新增留言</title>
 </head>
 <body>
     <form action="add2.php" method="post" align="center">
