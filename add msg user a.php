@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>管理者首頁</title>
-        <link rel="stylesheet" href="style/user a.css">
+        <title>留言板</title>
+        <link rel="stylesheet" href="style/style.css">
     </head>
     <body>
         <table>
@@ -21,31 +21,33 @@
                             <td>
                                 <a href="order user a.php">訂餐</a>
                             </td>
-                            <td>
-                            <a href="msg admin.php">留言板</a></td>
-                            <td>
-                                <a href="logout.php">登出</a>
-                            </td>
-                            
+                            <td><a href="logout.php">登出</a></td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <tr>
-                <td colspan="5" align="center" class="Indicator">目前位置➝管理者首頁</td>
+                <td colspan="5" align="center" class="Indicator">目前位置➝admin留言板</td>
             </tr>
-            <tr >
+            <tr>
                 <td class="content">
                     <table>
-                        <tr>
-                            <td>
-                                <button id="prevButton">back</button>
-                            </td>
-                            <td><img src="\img\menu1.jpg" id="myimg"></td>
-                            <td>
-                                <button id="nextButton">next</button>
-                            </td>
-                        </tr>
+                    <tr >
+                    <td></td>
+                    <td colspan="3">
+                        <textarea
+                            name="feedback"
+                            id="feedback"
+                            rows="12"
+                            cols="60"
+                            placeholder="想說甚麼都可以"
+                            class="BG-Copy"
+                            style="border:2px #2f3944 solid;"></textarea><br>
+                        <button name='submit'>送出</button>
+                        <button name='submit'>清除</button>
+                    </td>
+                    <td></td>
+                </tr>
                     </table>
                 </td>
             </tr>
@@ -56,13 +58,14 @@
                             <td>製作人</td>
                             <td>連結</td>
                             <td>
+                                <a href="add msg user a.php">留言板</a>
                             </td>
                         </tr>
                         <tr>
                             <td>鄧益汯</td>
                             <td>
-                                <button onclick="play()">播放音樂</button>
-                            </td>
+                                
+                        </td>
                             <td></td>
                         </tr>
                         <tr>
@@ -92,7 +95,7 @@
         id="music"></iframe>
 
         <script>
-            
+
             function play() {
                 let iframe = document.getElementById("music");
                 iframe.src += "&autoplay=1";

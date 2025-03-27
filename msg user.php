@@ -1,109 +1,54 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>首頁</title>
-    </head>
-    <body align="center">
+<head>
+    <?php include("db.php")?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body align="center">
+    <style>
+        .head{
+            text-align: center;
+        }
+    </style>
+<div class="head">    
+<a href="index user u.php">首頁</a>
+    <a href="index user u food.php">菜單</a>
+    <a href="order user u.php">訂餐</a>
+    <a href="logout.php">登出</a>
+    </div>
+<form action="add2.php" method="post">
+    <h1>😎留言版<br>歡迎<?php echo $_SESSION['name']; ?></h1>
 
-        <link rel="stylesheet" href="style/style.css">
-
-        <table >
-            <tr id="top">
-                <td>
-                    <a href="index user u.php">首頁</a>
-                </td>
-                <td>
-                    <a href="index food.php">菜單</a>
-                </td>
-                <td>
-                    <a href="order user a.php">訂餐</a>
-                </td>
-                <td>
-                    <a href="">查看訂單 </a>
-                </td>
-                <td>
-                    <a href="logout.php">登出</a>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="5">目前位置➝首頁</td>
-            </tr>
-            <tr>
-                <td>
-                    <button id="prevButton">back</button>
-                </td>
-                <td colspan="3" align="center"><img src="/img/menu1.jpg" id="myimg"></td>
-                <td>
-                    <button id="nextButton">next</button>
-                </td>
-
-            </tr>
-            <tr >
-                <table>
-                    <tr>
-                        <td>製作人</td>
-                        <td>連結</td>
-                        <td >
-                            <a href="add msg.php">留言板</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>鄧益汯</td>
-                        <td>
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>黃聖翔</td>
-                        <td ></td>
-                        <td ></td>
-                    </tr>
-                    <tr>
-                        <td>黃子杰</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>楊恩愷</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </tr>
-
-        </table>
-
-        
-
-        <script>
-            
-            const images = ['/img/menu1.jpg', '/img/menu2.jpg', '/img/menu3.jpg', '/img/menu4.jpg', '/img/menu5.jpg'];
-
-            let currentIndex = 0;
-
-            function updateImage() {
-                document
-                    .getElementById('myimg')
-                    .src = images[currentIndex];
+    <input type="button" value="新增" onclick=location.href="add.php?id='.$row['id'].'">
+    <?php
+        $sql="SELECT * FROM `msg` WHERE 1";
+        $res=mysqli_query($link,$sql);
+        if(mysqli_num_rows($res)>0){
+            while($row=mysqli_fetch_assoc($res)){
+                echo "<table style='width:700px' border='2' align='center'>";
+                echo "<tr style='height:50px'>";
+                echo "<td>".'title:'.$row["title"]."</td>";
+                echo "<td>".'帳號:'.$row["account"]."</td>";
+                echo "</tr>";
+                echo "<tr style='height:400px'><td colspan='2'>".'留言:'.$row["text"]."</td></tr>";
+                echo "<tr style='height:50px'>";
+                echo "<td>".'發佈時間:'.$row["add_time"].'　更新時間:'.$row["up_time"]."</td>";
+                if($_SESSION["account"]==$row["account"]){
+                    echo "<td><input type='button' value='刪除' onclick=location.href='del.php?id=".$row['id']."'></td>";
+                }else{
+                    echo "<td></td>";
+                }
+                echo "</tr>";
+                echo "<br>";
+                echo "</table>";
+                
             }
-
-            document
-                .getElementById('prevButton')
-                .addEventListener('click', function () {
-                    currentIndex = (currentIndex - 1 + images.length) % images.length;
-                    updateImage();
-                });
-
-            document
-                .getElementById('nextButton')
-                .addEventListener('click', function () {
-                    currentIndex = (currentIndex + 1) % images.length;
-                    updateImage();
-                });
-        </script>
-
-    </body>
+        }
+        
+    ?>
+    <input type="button" value="登出" onclick=location.href="logout.php">
+    </form>
+</body>
 </html>

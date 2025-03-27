@@ -12,17 +12,18 @@
                 <td class="header">
                     <table>
                         <tr>
-                            <td><a href="index.php">首頁</a></td>
-                            <td><a href="index food.php">菜單</a></td>
-                            <td><a href="index login.php">訂餐</a></td>
-                            <td><a href="index login.php">登入</a></td>
-                            <td><a href="add user.php">註冊</a></td>
+                            <td><a href="index user u.php">首頁</a></td>
+                            <td><a href="index user u food.php">菜單</a></td>
+                            <td><a href="order user u.php">訂餐</a></td>
+                            <td><a href="msg user.php">留言板</a></td>
+                            <td><a href="logout.php">登出</a></td>
+                            
                         </tr>
                     </table>
                 </td>
             </tr>
             <tr>
-                <td colspan="5" align="center" class="Indicator">目前位置➝菜單</td>
+                <td colspan="5" align="center" class="Indicator">目前位置➝user菜單</td>
             </tr>
             <tr>
                 <td class="content"><table>
@@ -41,7 +42,6 @@
                         <tr>
                         <td>製作人</td>
                         <td>連結</td>
-                        <td><a href="add msg.php">留言板</a></td>
                     </tr><tr>
                         <td>鄧益汯</td>
                         <td></td>
