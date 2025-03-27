@@ -40,6 +40,9 @@ table {
                                 <td>
                                     <a href="index login.php">訂餐</a>
                                 </td>
+                                <td>
+                                    <a href="add user.php">註冊</a>
+                                </td>
                                 
                             </tr>
                         </table>

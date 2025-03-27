@@ -19,9 +19,12 @@ if(mysqli_num_rows($res)>0){
             }
         }
     }else{
-        header("location:index.php");
+        echo "<script>alert('帳號密碼錯誤，請重新登入')</script>";
+        echo "<script>location.href='index.php'</script>";
+
     }
 }else{
-    header("location:index.php");
+    echo "<script>alert('帳號密碼錯誤，請重新登入')</script>";
+    echo "<script>location.href='index.php'</script>";
 }
 ?>

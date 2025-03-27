@@ -4,9 +4,21 @@
     <?php include("db.php"); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11253413楊恩愷</title>
+    <title>新增使用者</title>
 </head>
 <body>
+    
+<style>
+        .head{
+            text-align: center;
+        }
+    </style>
+<div class="head">    
+<a href="index.php">首頁</a>
+    <a href="index food.php">菜單</a>
+    
+    <a href="index login.php">登入</a>
+    </div>
     <form action="adduser2.php" method="get" align="center">
         <h1>新增使用者</h1>
         <table border="1px" align="center" width="500px">
