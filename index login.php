@@ -7,19 +7,31 @@
         <title>登入首頁</title>
         <style>
             
-.header {
-    height: 50px;
-    text-align: center;
-    background-color: orange;
-    font-size: 20px;
-    font-weight: bold;
+/* 標題 */body,
+html {
+    height: 100%;
+    margin: 0;
 }
+
 table {
     width: 100%;
     height: 100%;
     border-collapse: collapse;
 }
+.header {
+    height: 50px;
+    text-align: center;
+    background-color: blueviolet;
+    font-size: 30px;
+    font-weight: bold;
+}
+/* 標題的連結 */
+.header a{
+    color:white;
+    text-decoration: none;
+}
 
+            
         </style>
     </head>
     <body align="center">
@@ -37,9 +49,7 @@ table {
                                 <td>
                                     <a href="index food.php">菜單</a>
                                 </td>
-                                <td>
-                                    <a href="index login.php">訂餐</a>
-                                </td>
+                                
                                 <td>
                                     <a href="add user.php">註冊</a>
                                 </td>
