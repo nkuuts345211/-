@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>菜單</title>
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/style food.css">
     </head>
     <body>
         <table>
@@ -27,13 +27,16 @@
             <tr>
                 <td class="content"><table>
                     <tr>
-                    <td><img src="\img\menu1.jpg" onclick="menu1()"></td>
-                    <td><img src="\img\menu2.jpg" onclick="menu2()"></td>
-                    <td><img src="\img\menu3.jpg" onclick="menu3()"></td>
-                    <td><img src="\img\menu4.jpg" onclick="menu4()"></td>
-                    <td><img src="\img\menu5.jpg" onclick="menu5()"></td>
+                    <td><img src="\img\menu1.jpg"><p>菜單介紹</p><p>價格</p></td>
+                    <td><img src="\img\menu2.jpg"><p>菜單介紹</p><p>價格</p></td>
+                    <td><img src="\img\menu3.jpg"><p>菜單介紹</p><p>價格</p></td>
+                    <td><img src="\img\menu4.jpg"><p>菜單介紹</p><p>價格</p></td>
+                    <td><img src="\img\menu5.jpg"><p>菜單介紹</p><p>價格</p></td>
                 </tr>
                 </table></td>
+            </tr>
+            <tr>
+                <td align="center">看要不要加一個主廚推薦</td>
             </tr>
             <tr>
                 <td class="footer">
