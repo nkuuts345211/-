@@ -14,6 +14,8 @@ if(mysqli_num_rows($res)>0){
             $_SESSION["name"]=$row["name"];
             if($row['type']=="a"){
                 header("location:index user a.php");
+            }elseif($row['type']=="o"){
+                header("location:index user o.php");
             }else{
                 header("location:index user u.php");
             }

@@ -12,10 +12,10 @@
                 <td class="header">
                     <table>
                         <tr>
-                            <td><a href="index user u.php">首頁</a></td>
-                            <td><a href="index user u food.php">菜單</a></td>
-                            <td><a href="order user u.php">訂餐</a></td>
-                            <td><a href="msg user.php">留言板</a></td>
+                            <td><a href="index user o.php">首頁</a></td>
+                            <td><a href="index user o food.php">菜單</a></td>
+                            <td>編輯菜單</td>
+                            <td><a href="msg o.php">留言板</a></td>
                             <td><a href="logout.php">登出</a></td>
                             
                         </tr>
