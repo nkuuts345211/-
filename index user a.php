@@ -16,9 +16,6 @@
                                 <a href="index user a.php">首頁</a>
                             </td>
                             <td>
-                                <a href="index user a food.php">菜單</a>
-                            </td>
-                            <td>
                                 <a href="order user a.php">訂餐</a>
                             </td>
                             <td>
