@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>菜單</title>
-        <link rel="stylesheet" href="style/style food.css">
+        <link rel="stylesheet" href="style/food.css">
     </head>
     <body>
         <table>
