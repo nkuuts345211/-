@@ -16,7 +16,10 @@
                                 <a href="index user a.php">首頁</a>
                             </td>
                             <td>
-                                <a href="order user a.php">訂餐</a>
+                                <a href="index user a food.php">菜單</a>
+                            </td>
+                            <td>
+                                <a href="">編輯使用者(未連結)</a>
                             </td>
                             <td>
                             <a href="msg admin.php">留言板</a></td>

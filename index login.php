@@ -63,7 +63,7 @@ table {
         </div>
         <h1 align="center">登入系統</h1>
         <form action="login.php" method="get">
-            <table align="center" border="1">
+            <table align="center" border="1" style="width: 40%;">
                 <tr>
                     <td>帳號</td>
                     <td><input type="text" name="account"></td>
