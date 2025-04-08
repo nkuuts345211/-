@@ -66,7 +66,7 @@ table {
             <table align="center" border="1" style="width: 40%;">
                 <tr>
                     <td>帳號</td>
-                    <td><input type="text" name="account"></td>
+                    <td><input type="text" name="account" autocomplete="off"></td>
                 </tr>
                 <tr>
                     <td>密碼</td>

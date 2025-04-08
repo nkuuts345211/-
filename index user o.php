@@ -19,7 +19,7 @@
                                 <a href="index user o food.php">菜單</a>
                             </td>
                             <td>
-                                <a href="order user u.php">編輯菜單(連結未修改)</a>
+                                <a href="menu user o.php">編輯菜單</a>
                             </td>
                             <td><a href="msg o.php">留言板</a></td>
                             <td>

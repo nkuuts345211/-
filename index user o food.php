@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>菜單</title>
+        <title>賣家菜單</title>
         <link rel="stylesheet" href="style/food.css">
     </head>
     <body>
@@ -14,7 +14,7 @@
                         <tr>
                             <td><a href="index user o.php">首頁</a></td>
                             <td><a href="index user o food.php">菜單</a></td>
-                            <td>編輯菜單</td>
+                            <td><a href="menu user o.php">編輯菜單</a></td>
                             <td><a href="msg o.php">留言板</a></td>
                             <td><a href="logout.php">登出</a></td>
                             
@@ -23,7 +23,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="5" align="center" class="Indicator">目前位置➝user菜單</td>
+                <td colspan="5" align="center" class="Indicator">目前位置➝賣家菜單</td>
             </tr>
             <tr>
                 <td class="content"><table>

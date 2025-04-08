@@ -4,7 +4,7 @@
     <?php include("db.php")?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>賣家留言板</title>
 </head>
 <body align="center">
     <style>
@@ -15,7 +15,7 @@
 <div class="head">    
 <a href="index user o.php">首頁</a>
     <a href="index user o food.php">菜單</a>
-    編輯菜單
+    <a href="menu user o.php">編輯菜單</a>
     <a href="logout.php">登出</a>
     </div>
 <form action="add2.php" method="post">
