@@ -70,7 +70,7 @@ table {
                 </tr>
                 <tr>
                     <td>密碼</td>
-                    <td><input type="text" name="password"></td>
+                    <td><input type="password" name="password"></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" value="送出"></td>
