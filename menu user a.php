@@ -22,9 +22,7 @@
     </style>
 </head>
 <body align="center">
-    <!-- <script>
-        alert('歡迎');
-    </script> -->
+    
     <div id="a1">
 <table align="center" >
             <tr>

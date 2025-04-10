@@ -5,22 +5,40 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>賣家菜單編輯</title>
-        <link rel="stylesheet" href="style/menuo.css">
+        
     </head>
-    <body>
-        <table>
+    <body>  <style>
+#a1{
+    text-align: center;
+    width: 46%;
+    background-color: purple;
+    margin-inline: auto;
+    
+}
+#a1 a{
+    color: white;
+    text-decoration: none;
+    font-family:'DFKai-sb';font-size: 28px;
+}
+
+    </style>
+</head>
+<body align="center">
+    
+    <div id="a1">
+<table align="center" >
             <tr>
                 <td class="header">
                     <table>
                         <tr>
                             <td>
-                                <a href="index user o.php">首頁</a>
+                                <a href="index user a.php">首頁</a>
                             </td>
                             <td>
-                                <a href="index user o food.php">菜單</a>
+                                <a href="index user a food.php">菜單</a>
                             </td>
                             <td>
-                                <a href="msg o.php">留言板</a>
+                                <a href="msg a.php">留言板</a>
                             </td>
 
                             <td>
@@ -30,6 +48,8 @@
                     </table>
                 </td>
             </tr>
+</table>
+    </div>
             <tr>
                 <td colspan="5" align="center">
                     <h1>歡迎<?php echo $_SESSION['name']; ?>👍</h1>
@@ -38,7 +58,7 @@
             <tr >
                 <td class="content">
                     <table>
-                        <form action="menu user a 2.php" method="post">
+                        <form action="menu user o 2.php" method="post">
 
                             <button type="button" onclick="location.href='add food user o.php'">新增菜單</button>
 
