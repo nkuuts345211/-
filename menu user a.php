@@ -7,7 +7,16 @@
     <title>Document</title>
     <style>
 #a1{
-    background-color: gray;
+    text-align: center;
+    width: 46%;
+    background-color: purple;
+    margin-inline: auto;
+    
+}
+#a1 a{
+    color: white;
+    text-decoration: none;
+    font-family:'DFKai-sb';font-size: 28px;
 }
 
     </style>
@@ -18,21 +27,33 @@
     </script> -->
     <div id="a1">
 <table align="center" >
-    <tr>
-        
-        <td><a href="http://localhost/%e9%a6%96%e9%a0%81/index%20login.php"><img src="https://th.bing.com/th/id/OIP.tyEHuivrhydAWDxiTRzrfAAAAA?w=137&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" height="50px" width="50px"></a></td>
-        <td ><a href="index food.php">菜單簡介</a></td>
-        
-        
-        
-        <td ><a href="add user.php">註冊</a></td>
-    </tr>
+            <tr>
+                <td class="header">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="index user a.php">首頁</a>
+                            </td>
+                            <td>
+                                <a href="index user a food.php">菜單</a>
+                            </td>
+                            <td>
+                                <a href="msg a.php">留言板</a>
+                            </td>
+
+                            <td>
+                                <a href="logout.php">登出</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
 </table>
     </div>
     <form action="menu user a 2.php" method="post">
         <h1>歡迎<?php echo $_SESSION['name']; ?>👍</h1>
-        <button type="button" onclick="location.href='order user a.php'">下訂</button>
-        <button type="button" onclick="location.href='add food user a.php'">新增菜單</button>
+        
+        <button type="button" onclick="location.href='add food.php'">新增菜單</button>
         
         <?php
             $sql="SELECT * FROM `food` WHERE 1";
@@ -44,7 +65,7 @@
                     echo "<td>".'品名:'.$row["c_name"]."</td>";
                     echo "<td>".'編號:'.$row["c_num"]."</td>";
                     echo "</tr>";
-                    echo "<tr style='height:400px'><td colspan='2'>".'留言:'.$row["text"]."<img src='".$row['img']."' style='width:300px'>"."</td></tr>";
+                    echo "<tr style='height:400px'><td colspan='2'>"."<img src='".$row['img']."' style='width:300px'>".$row["text"]."</td></tr>";
                     echo "<tr style='height:50px'>";
                     echo "<td>".'發佈時間:'.$row["add_time"]."</td>";
                         echo "<td><button type='button' onclick='location.href='add food user a.php?id=".$row['id']."'>修改</button><input type='button' value='刪除' onclick=location.href='del menu.php?id=".$row['id']."'></td>";

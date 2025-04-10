@@ -22,6 +22,9 @@
                                 <a href="">編輯使用者(未連結)</a>
                             </td>
                             <td>
+                                <a href="menu user a.php">編輯菜單</a>
+                            </td>
+                            <td>
                             <a href="msg admin.php">留言板</a></td>
                             <td>
                                 <a href="logout.php">登出</a>

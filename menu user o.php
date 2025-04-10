@@ -19,8 +19,10 @@
                             <td>
                                 <a href="index user o food.php">菜單</a>
                             </td>
-                            <td><a href="msg o.php">留言板</a></td>
-                            
+                            <td>
+                                <a href="msg o.php">留言板</a>
+                            </td>
+
                             <td>
                                 <a href="logout.php">登出</a>
                             </td>
@@ -50,7 +52,7 @@
                     echo "<td>".'品名:'.$row["c_name"]."</td>";
                     echo "<td>".'編號:'.$row["c_num"]."</td>";
                     echo "</tr>";
-                    echo "<tr style='height:400px'><td colspan='2'>".'留言:'.$row["text"]."<img src='".$row['img']."' style='width:300px'>"."</td></tr>";
+                    echo "<tr style='height:400px'><td colspan='2'>"."<img src='".$row['img']."' style='width:300px'>".$row["text"]."</td></tr>";
                     echo "<tr style='height:50px'>";
                     echo "<td>".'發佈時間:'.$row["add_time"]."</td>";
                         echo "<td><button type='button' onclick='location.href='add food user a.php?id=".$row['id']."'>修改</button><input type='button' value='刪除' onclick=location.href='del menu.php?id=".$row['id']."'></td>";
@@ -66,41 +68,11 @@
                     </table>
                 </td>
             </tr>
-            <tr>
-                <td class="footer">
-                    <table>
-                        <tr>
-                            <td>製作人</td>
-                            <td>連結</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>鄧益汯</td>
-                            <td>
-                                
-                            </td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>黃聖翔</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>黃子杰</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>楊恩愷</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-
         </table>
+    </td>
+</tr>
 
-    </body>
+</table>
+
+</body>
 </html>
