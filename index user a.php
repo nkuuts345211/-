@@ -19,7 +19,7 @@
                                 <a href="index user a food.php">菜單</a>
                             </td>
                             <td>
-                                <a href="">編輯使用者(未連結)</a>
+                                <a href="admin fix user.php">編輯使用者</a>
                             </td>
                             <td>
                                 <a href="menu user a.php">編輯菜單</a>
