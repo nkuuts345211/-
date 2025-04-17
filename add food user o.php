@@ -7,6 +7,9 @@
     <title>新增商品</title>
 </head>
 <body>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="photo">
+    <input type="submit" value="上傳圖片" name="submit">
     <form action="add food2.php" method="get" align="center" enctype="multipart/form-data">
         <h1>新增商品</h1>
         <table border="1px" align="center" width="500px">

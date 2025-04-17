@@ -7,7 +7,7 @@
     <title>新增商品</title>
 </head>
 <body>
-    <form action="add food2.php" method="get" align="center" enctype="multipart/form-data">
+    <form action="add%20food2.php" method="post" align="center" enctype="multipart/form-data">
         <h1>新增商品</h1>
         <table border="1px" align="center" width="500px">
             <tr>
@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <td>圖片</td>
-                <td><input type="file" name="img"></td>
+                <td><input type="file" name="img" accept="image/*"></td>
                 
             </tr>
             <tr>
@@ -43,5 +43,6 @@
         </table>
     </form>
     
+</form>
 </body>
 </html>
