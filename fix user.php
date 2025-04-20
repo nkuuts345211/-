@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body align="center">
     <style>
+  
         table,td{
             border: 1px black solid;
             margin-inline: auto;
@@ -14,10 +15,10 @@
         
     </style>
     <div>
-    <h3>帳號權限介紹</h3><br>
-    <h4>a=管理者</h4>
-    <h4>u=使用者</h4>
-    <h4>o=賣家</h4>
+    <h1>帳號權限介紹</h1><br>
+    <h3>a=管理者</h>
+    <h3>u=使用者</h3>
+    <h3>o=賣家</h3>
     </div>
     <form action="fix user2.php" method="get">
 <?php
@@ -30,11 +31,11 @@ if(mysqli_num_rows($res)>0){
     while($row=mysqli_fetch_assoc($res)){
         echo "<table>";
     echo "<tr>";
-    echo "<td>帳號</td>";
+    echo "<td>權限</td>";
     echo "<td><input type='text' name='type' value='".$row["type"]."'></td>";
     echo "</tr>";
     echo "<input type='hidden' name='id' value='".$row['id']."'>";
-    echo "<tr><td><input type='submit' value='送出'></td></tr>";
+    echo "<tr><td colspan='2'><input type='submit' value='送出'></td></tr>";
   
     echo "</table>";
   }

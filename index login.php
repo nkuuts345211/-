@@ -66,11 +66,11 @@ table {
             <table align="center" border="1" style="width: 40%;">
                 <tr>
                     <td>帳號</td>
-                    <td><input type="text" name="account" autocomplete="off"></td>
+                    <td><input type="text" name="account" autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td>密碼</td>
-                    <td><input type="password" name="password"></td>
+                    <td><input type="password" name="password"  autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" value="送出"></td>

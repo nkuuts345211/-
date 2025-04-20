@@ -15,7 +15,7 @@
                 margin: 0;
             }
             table {
-                width: 100%;
+                width: 40%;
                 height: 100%;
                 border-collapse: collapse;
             }
@@ -44,27 +44,27 @@
 
             <div class="title"><a href="index login.php">登入</a></div>
         </div>
-        <form action="adduser2.php" method="get" align="center">
+        <form action="adduser2.php" method="post" align="center">
             <h1>新增使用者</h1>
-            <table border="1px" align="center" width="500px">
+            <table border="1px" align="center" width="60%">
                 <tr>
                     <td>帳號</td>
-                    <td><input type="text" name="account" required></td>
+                    <td><input type="text" name="account" required  autocomplete="off"></td>
 
                 </tr>
                 <tr>
                     <td>密碼</td>
-                    <td><input type="text" name="password" required></td>
+                    <td><input type="text" name="password" required  autocomplete="off"></td>
 
                 </tr>
                 <tr>
                     <td>你的名字</td>
-                    <td><input type="text" name="name" required></td>
+                    <td><input type="text" name="name" required  autocomplete="off"></td>
 
                 </tr>
                 <tr>
-                    <td></td>
-                    <td><input type="submit" value="送出"></td>
+                    
+                    <td colspan="2"><input type="submit" value="送出"></td>
 
                 </tr>
             </table>

@@ -48,7 +48,7 @@ if(mysqli_num_rows($res)>0){
     echo"<td>".$row["account"]."</td>";
     echo "<td>".$row["password"]."</td>";
     echo "<td>".$row["type"]."</td>";
-    echo "<td><input type='button' value='修改' onclick=location.href='fix%20user.php?id=".$row['id']."'></td>";
+    echo "<td><input type='button' value='修改(權限)' onclick=location.href='fix%20user.php?id=".$row['id']."'><input type='button' value='刪除' onclick=location.href='del%20user.php?id=".$row['id']."'></td>";
     echo "</tr>";
     }
 
