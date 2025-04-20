@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2025-04-17 07:00:32
+-- 產生時間： 2025-04-20 04:14:01
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.0.30
 
@@ -42,7 +42,7 @@ CREATE TABLE `food` (
 --
 
 INSERT INTO `food` (`id`, `c_num`, `c_name`, `c_money`, `img`, `add_time`, `text`) VALUES
-(1, 'A001', 'menu1', 1000, 'menu1.jpg', '2025-04-16 15:04:38', '香嫩多汁大雞排'),
+(1, 'A001', 'menu1', 2000, 'menu1.jpg', '2025-04-16 15:04:38', '香嫩多汁大雞排'),
 (2, 'A002', 'menu2', 1000, 'menu2.jpg', '2025-04-16 15:07:40', '超級美式熱狗堡'),
 (3, 'A003', 'menu3', 2000, 'menu3.jpg', '2025-04-17 11:31:58', '大烤雞全餐'),
 (4, 'A004', 'menu4', 2000, 'menu4.jpg', '2025-04-17 12:56:11', '色香味俱全的烤雞腿'),
@@ -146,7 +146,7 @@ ALTER TABLE `food`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `msg`
 --
 ALTER TABLE `msg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order`

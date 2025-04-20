@@ -10,6 +10,14 @@
     <style>
         .head{
             text-align: center;
+            background-color: lightgreen;
+            font-size: 24px;
+            font-weight: bold;
+            margin-inline: auto;
+            width: 50%;
+        }
+        .head a{
+            text-decoration: none;
         }
     </style>
 <div class="head">    

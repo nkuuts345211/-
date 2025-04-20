@@ -11,7 +11,7 @@
     .header{
         background-color: purple;
         margin-inline: auto;
-        width: 4%;
+        width: 20%;
         
     }
     .header a{

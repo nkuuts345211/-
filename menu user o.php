@@ -60,7 +60,7 @@
             <td class="content">
                 <table>
                     <button type="button" onclick="location.href='add food.php'">新增菜單</button>
-
+<form action="add%20food%20user%20o.php" method="get">
                     <?php
             $sql="SELECT * FROM `food` WHERE 1";
             $res=mysqli_query($link,$sql);
@@ -74,17 +74,16 @@
                     echo "<tr style='height:400px'><td colspan='2'>"."<img src='img/".$row['img']."' style='width:300px'><br>".$row["text"]."</td></tr>";
                     echo "<tr style='height:50px'>";
                     echo "<td>".'發佈時間:'.$row["add_time"]."</td>";
-                        echo "<td><button type='button' onclick='location.href='add%20food%20user%20o.php?id=".$row['id']."'>修改</button><input type='button' value='刪除' onclick=location.href='del%20food.php?id=".$row['id']."'></td>";
+                        echo "<td><button type='button' onclick=location.href='add%20food%20user%20o.php?id=".$row['id']."'>修改</button><input type='button' value='刪除' onclick=location.href='del%20food.php?id=".$row['id']."'></td>";
                     echo "</tr>";
                     echo "<br>";
                     echo "</table>";
-                    
+                    echo "<input type='hidden' name='id' value=".$row['id'].">";
                 }
             }
             
-        ?>
-                </table>
-            </td>
+        ?></form>
+        </td>
         </tr>
     </table>
 </td>

@@ -49,17 +49,17 @@
             <table border="1px" align="center" width="500px">
                 <tr>
                     <td>帳號</td>
-                    <td><input type="text" name="account"></td>
+                    <td><input type="text" name="account" required></td>
 
                 </tr>
                 <tr>
                     <td>密碼</td>
-                    <td><input type="text" name="password"></td>
+                    <td><input type="text" name="password" required></td>
 
                 </tr>
                 <tr>
                     <td>你的名字</td>
-                    <td><input type="text" name="name"></td>
+                    <td><input type="text" name="name" required></td>
 
                 </tr>
                 <tr>
