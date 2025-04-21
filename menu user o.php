@@ -9,48 +9,39 @@
     </head>
     <body>
         <style>
-            #a1 {
-                text-align: center;
-                width: 46%;
-                background-color: purple;
-                margin-inline: auto;
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+.a1{
+    width: 100%;
+    background-color: lightgreen;
+    border-collapse: collapse;
+}
+.a1 td{
+    width: 24%;
+}
+.a1 a{
+    text-decoration: none;
+}
+/* 標題 */
 
-            }
-            #a1 a {
-                color: white;
-                text-decoration: none;
-                font-family: 'DFKai-sb';
-                font-size: 28px;
-            }
+            
         </style>
     </head>
     <body align="center">
-
-        <div id="a1">
-            <table align="center">
-                <tr>
-                    <td class="header">
-                        <table>
-                            <tr>
-                                <td>
-                                    <a href="index user o.php">首頁</a>
-                                </td>
-                                <td>
-                                    <a href="index user o food.php">菜單</a>
-                                </td>
-                                <td>
-                                    <a href="msg o.php">留言板</a>
-                                </td>
-
-                                <td>
-                                    <a href="logout.php">登出</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </div>
+<div class="a1">
+    <table align="center">
+        <tr>
+            <td><a href="index user o.php">首頁</a></td>
+            <td><a href="index user o food.php">菜單</a></td>
+            <td><a href="menu user o.php">編輯菜單</a></td>
+            <td><a href="msg o.php">留言板</a></td>
+            <td><a href="logout.php">登出</a></td>
+        </tr>
+    </table>
+</div>
         <tr>
             <td colspan="5" align="center">
                 <h1>歡迎<?php echo $_SESSION['name']; ?>👍</h1>
