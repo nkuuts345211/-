@@ -7,11 +7,24 @@
     <title>Document</title>
 </head>
 <body align="center">
-    <style>
+<style>
+        .head{
+            text-align: center;
+            background-color: orange;
+            font-size: 24px;
+            font-weight: bold;
+            margin-inline: auto;
+            width: 100%;
+        }
+        .head a{
+            text-decoration: none;
+        }
+    </style>
+    <!-- <style>
         .head{
             text-align: center;
         }
-    </style>
+    </style> -->
 <div class="head">    
 <a href="index user u.php">首頁</a>
     <a href="index user u food.php">菜單</a>

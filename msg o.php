@@ -14,7 +14,7 @@
             font-size: 24px;
             font-weight: bold;
             margin-inline: auto;
-            width: 50%;
+            width: 100%;
         }
         .head a{
             text-decoration: none;

@@ -6,11 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body align="center"><style>
+<body align="center">
+<style>
+        .head{
+            text-align: center;
+            background-color: lightblue;
+            font-size: 24px;
+            font-weight: bold;
+            margin-inline: auto;
+            width: 100%;
+        }
+        .head a{
+            text-decoration: none;
+        }
+    </style>
+    <!-- <style>
         .head{
             text-align: center;
         }
-    </style>
+    </style> -->
 <div class="head">    
 <a href="index user a.php">首頁</a>
     <a href="index user a food.php">菜單</a>
