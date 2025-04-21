@@ -33,10 +33,10 @@
                         <table>
                             <tr>
                                 <td>
-                                    <a href="index user o.php">首頁</a>
+                                    <a href="index user a.php">首頁</a>
                                 </td>
                                 <td>
-                                    <a href="index user o food.php">菜單</a>
+                                    <a href="index user a food.php">菜單</a>
                                 </td>
                                 <td>
                                     <a href="msg o.php">留言板</a>
