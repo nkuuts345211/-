@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include("db.php"); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新增商品</title>
+    <title>Document</title>
+    <style>
+        div{
+            background-color: purple;
+            margin-inline: auto;
+            width: 15%;
+        }
+        div a{
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <form action="add food2.php" method="get" align="center" enctype="multipart/form-data">
-        <h1>新增商品</h1>
-        <table border="1px" align="center" width="500px">
-            <tr>
-                <td>商品編號</td>
-                <td><input type="text" name="c_num" autocomplete="off"></td>
+    <div>
+        <h2><a href="menu%20user%20a.php">返回上一頁</a></h2>
+    </div>
+<?php
+            include ("db.php");
+            $id=$_GET["id"];
+            $sql="SELECT * FROM `food` WHERE `id`=$id";
+            
+                $res=mysqli_query($link,$sql);
+                if(mysqli_num_rows($res)>0){
+                    while($row=mysqli_fetch_assoc($res)){
+                        echo "<form action='adduser2.php' method='post' align='center'>";
+                        echo "<table align='center' border='1px soild black'>";
+                        echo "<tr><td>num</td><td><input type='text' name='c_num' value='".$row["c_num"]."'></td></tr>";
+                        echo "<tr><td>name</td><td><input type='text' name='c_name' value='".$row["c_name"]."'></td></tr>";
+                        echo "<tr><td>money</td><td><input type='text' name='c_money' value='".$row["c_money"]."'></td></tr>";
+                        echo "<tr><td>img</td><td><input type='file' name='img' accept='image/*' required></td></tr>";
+                        echo "<tr><td>text</td><td><input type='text' name='text' style='height:200px' value='".$row["text"]."'></td></tr>";
+                        echo "</table>";
+                        echo "</form>";
+
+                    }
+                }
                 
-            </tr>
-            <tr>
-                <td>商品名稱</td>
-                <td><input type="text" name="c_name" autocomplete="off"></td>
-                
-            </tr>
-            <tr>
-                <td>商品價錢</td>
-                <td><input type="text" name="c_money" autocomplete="off"></td>
-                
-            </tr>
-            <tr>
-                <td>圖片</td>
-                <td><input type="file" name="img"></td>
-                
-            </tr>
-            <tr>
-                <td>介紹</td>
-                <td><input type="text" name="text" style="height:200px" autocomplete="off"></td>
-                
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="submit" value="送出"></td>
-                
-            </tr>
-        </table>
-    </form>
+            ?>
     
 </body>
 </html>
