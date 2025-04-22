@@ -39,7 +39,7 @@
                                     <a href="index user a food.php">菜單</a>
                                 </td>
                                 <td>
-                                    <a href="msg o.php">留言板</a>
+                                    <a href="msg admin.php">留言板</a>
                                 </td>
 
                                 <td>

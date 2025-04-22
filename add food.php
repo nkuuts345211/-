@@ -12,27 +12,27 @@
         <table border="1px" align="center" width="500px">
             <tr>
                 <td>商品編號</td>
-                <td><input type="text" name="c_num" autocomplete="off"></td>
+                <td><input type="text" name="c_num" autocomplete="off" required></td>
                 
             </tr>
             <tr>
                 <td>商品名稱</td>
-                <td><input type="text" name="c_name" autocomplete="off"></td>
+                <td><input type="text" name="c_name" autocomplete="off" required></td>
                 
             </tr>
             <tr>
                 <td>商品價錢</td>
-                <td><input type="text" name="c_money" autocomplete="off"></td>
+                <td><input type="text" name="c_money" autocomplete="off" required></td>
                 
             </tr>
             <tr>
                 <td>圖片</td>
-                <td><input type="file" name="img" accept="image/*"></td>
+                <td><input type="file" name="img" accept="image/*" required></td>
                 
             </tr>
             <tr>
                 <td>介紹</td>
-                <td><input type="text" name="text" style="height:200px" autocomplete="off"></td>
+                <td><input type="text" name="text" style="height:200px" autocomplete="off" required></td>
                 
             </tr>
             <tr>

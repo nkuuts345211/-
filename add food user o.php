@@ -31,7 +31,7 @@
                 $res=mysqli_query($link,$sql);
                 if(mysqli_num_rows($res)>0){
                     while($row=mysqli_fetch_assoc($res)){
-                        echo "<form action='add%20food%20user.php' method='post' align='center'>";
+                        echo "<form action='add%20food%20user.php' method='post' align='center' enctype='multipart/form-data'>";
                         echo "<table align='center' border='1px soild black'>";
                         echo "<tr><td>num</td><td><input type='text' name='c_num' value='".$row["c_num"]."'></td></tr>";
                         echo "<tr><td>name</td><td><input type='text' name='c_name' value='".$row["c_name"]."'></td></tr>";
