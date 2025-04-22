@@ -11,8 +11,10 @@ while($row=mysqli_fetch_assoc($add)){
     $_SESSION["name"]=$row["name"];
     if($row['type']=="a"){
         header("location:msg admin.php");
-    }else{
+    }elseif($row["type"]=='u'){
         header("location:msg user.php");
+    }else{
+        header("location:msg o.php");
     }
 }
 
