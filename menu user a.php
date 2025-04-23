@@ -9,9 +9,12 @@
     </head>
     <body>
         <style>
+            body {
+                margin: 0;
+            }
             #a1 {
                 text-align: center;
-                width: 46%;
+                width: 100%;
                 background-color: purple;
                 margin-inline: auto;
 
@@ -21,32 +24,28 @@
                 text-decoration: none;
                 font-family: 'DFKai-sb';
                 font-size: 28px;
+                font-weight: bold;
             }
         </style>
     </head>
     <body align="center">
 
         <div id="a1">
-            <table align="center">
-                <tr>
-                    <td class="header">
-                        <table>
-                            <tr>
-                                <td>
-                                    <a href="index user a.php">首頁</a>
-                                </td>
-                                <td>
-                                    <a href="index user a food.php">菜單</a>
-                                </td>
-                                <td>
-                                    <a href="msg admin.php">留言板</a>
-                                </td>
+            <table align="center" style="width: 100%;">
+                <tr class="header">
 
-                                <td>
-                                    <a href="logout.php">登出</a>
-                                </td>
-                            </tr>
-                        </table>
+                    <td>
+                        <a href="index user a.php">首頁</a>
+                    </td>
+                    <td>
+                        <a href="index user a food.php">菜單</a>
+                    </td>
+                    <td>
+                        <a href="msg admin.php">留言板</a>
+                    </td>
+
+                    <td>
+                        <a href="logout.php">登出</a>
                     </td>
                 </tr>
             </table>

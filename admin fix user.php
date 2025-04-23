@@ -7,24 +7,31 @@
 </head>
 <body>
 <style>
-    
+    body{
+        margin: 0;
+    }
     .header{
         background-color: purple;
         margin-inline: auto;
-        width: 20%;
+        width: 100%;
         
     }
     .header a{
         text-decoration: none;
         color: white;
         font-size: 24px;
+        font-weight: bold;
     }
 
 </style>
 <div class="header">
-<table>
+<table align="center" style="width:100%;">
     <tr>
         <td><a href="index user a.php">首頁</a></td>
+        <td><a href="index user a food.php">菜單</a></td>
+        <td><a href="menu user a.php">編輯菜單</a></td>
+        <td><a href="msg admin.php">留言板</a></td>
+        <td><a href="logout.php">登出</a></td>
     </tr>
 </table>
 </div>
@@ -43,6 +50,10 @@ $res=mysqli_query($link,$sql);
 
 if(mysqli_num_rows($res)>0){
     while($row=mysqli_fetch_assoc($res)){
+    if($row["account"]==$_SESSION["account"]){
+
+    }
+    else{
     echo "<tr align='center'>";
     echo "<td>".$row["name"]."</td>";
     echo"<td>".$row["account"]."</td>";
@@ -50,6 +61,7 @@ if(mysqli_num_rows($res)>0){
     echo "<td>".$row["type"]."</td>";
     echo "<td><input type='button' value='修改(權限)' onclick=location.href='fix%20user.php?id=".$row['id']."'><input type='button' value='刪除' onclick=location.href='del%20user.php?id=".$row['id']."'></td>";
     echo "</tr>";
+    }
     }
 
 }

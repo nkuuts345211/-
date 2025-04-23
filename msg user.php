@@ -8,6 +8,9 @@
 </head>
 <body align="center">
 <style>
+    body{
+        margin: 0;
+    }
         .head{
             text-align: center;
             background-color: orange;
@@ -18,6 +21,7 @@
         }
         .head a{
             text-decoration: none;
+            
         }
     </style>
     <!-- <style>
@@ -25,12 +29,14 @@
             text-align: center;
         }
     </style> -->
-<div class="head">    
-<a href="index user u.php">首頁</a>
-    <a href="index user u food.php">菜單</a>
-    <a href="order user u.php">訂餐</a>
-    <a href="logout.php">登出</a>
-    </div>
+<div class="head">
+    <table align="center" style="width:100%;">
+        <tr>    
+            <td><a href="index user u.php">首頁</a></td>
+    <td><a href="index user u food.php">菜單</a></td>
+    <td><a href="order user u.php">訂餐</a></td>
+    <td><a href="logout.php">登出</a></td>
+    </tr></table></div>
 <form action="add2.php" method="post">
     <h1>😎留言版<br>歡迎<?php echo $_SESSION['name']; ?></h1>
 
