@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>菜單</title>
+        <title>使用者菜單</title>
         <link rel="stylesheet" href="style/food.css">
     </head>
     <body>
