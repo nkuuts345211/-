@@ -40,23 +40,17 @@
             $sql="SELECT * FROM `food` WHERE 1";
             echo "<tr>";
                 echo "<td class='content'>";
-                echo "<table>";
-                echo "<tr>";
+                
 
                 $res=mysqli_query($link,$sql);
                 if(mysqli_num_rows($res)>0){
                     while($row=mysqli_fetch_assoc($res)){
-                        echo "<table style='width:700px' border='2' align='center'>";
-                        echo "<tr style='height:50px'>";
-                        echo "<td colspan='2'>".'品名:'.$row["c_name"]."</td>";
+                        echo "<div class='dd' style='display:none;'><button onclick='no()'>x</button><img id='aa'></div>";
+                        echo "<div class='food'>";
+                        echo "<div><img src='img/".$row['img']."'></div>";
                         
-                        echo "</tr>";
-                        echo "<tr style='height:400px'><td colspan='2'>"."<img src='img/".$row['img']."' style='width:300px'><br>".$row["text"]."</td></tr>";
-                        echo "<tr style='height:50px'>";
-                        echo "<td>".'$$:'.$row["c_money"]."</td>";
-                         echo "</tr>";
-                        echo "<br>";
-                        echo "</table>";
+                        
+                        
                         
                     }
                 }
@@ -69,6 +63,52 @@
             
       
         </table>
-        
+        <style>
+            img {
+                width: 300px;
+                height: 300px;
+                border: 1px solid lightgray;
+                border-radius: 15px;
+                box-shadow: 3px 3px 2px lightgray;
+            }
+            .dd{
+                width: 600px;
+                height: 300px;
+                background-color: lemonchiffon;
+                position: absolute;
+                z-index: 10;
+                left:30%;
+            }
+            .food {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .food div {
+                box-sizing: border-box;
+            }
+            @media(min-width:1024px) {
+                .food div {
+                    width: calc(25%-20px);
+
+                }
+            }
+
+             @media(min-width:800) {
+                .food div {
+                    width: calc(50%-20px);
+
+                }
+            }
+
+        @media(max-width:799) {
+            .food div {
+                width: 100%;
+
+            }
+        }
+        </style>
     </body>
 </html>
