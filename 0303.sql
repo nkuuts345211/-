@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2025-04-21 04:34:37
--- 伺服器版本： 10.4.32-MariaDB
--- PHP 版本： 8.0.30
+-- 產生時間： 2025-04-28 11:05:52
+-- 伺服器版本： 10.4.24-MariaDB
+-- PHP 版本： 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,7 +35,7 @@ CREATE TABLE `food` (
   `img` text NOT NULL,
   `add_time` datetime NOT NULL,
   `text` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `food`
@@ -63,7 +63,7 @@ CREATE TABLE `msg` (
   `img` text NOT NULL,
   `add_time` datetime NOT NULL,
   `up_time` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -77,7 +77,7 @@ CREATE TABLE `order` (
   `c_num` varchar(20) NOT NULL,
   `c_name` varchar(20) NOT NULL,
   `c_money` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -91,19 +91,17 @@ CREATE TABLE `user` (
   `password` varchar(20) NOT NULL,
   `name` varchar(20) NOT NULL,
   `type` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `user`
 --
 
 INSERT INTO `user` (`id`, `account`, `password`, `name`, `type`) VALUES
-(1, '1212', '1212', '管理者', 'a'),
-(2, '1111', '1111', '使用者1', 'u'),
-(3, '1234', '1234', '賣方', 'o'),
-(4, '456', '456', '使用者2', 'u'),
-(5, '傘套', '111', '楊恩凱', 'u');
-
+(1, '1212', '1212', '管理者(黃老貓)', 'a'),
+(2, '1111', '1111', '使用者1(楊凱恩)', 'u'),
+(3, '1234', '1234', '賣方(鄧E汯)', 'o'),
+(4, '456', '456', '使用者2(黃ㄚ杰)', 'u');
 
 --
 -- 已傾印資料表的索引
