@@ -52,8 +52,7 @@
                         echo "</tr>";
                         echo "<tr style='height:400px'><td colspan='2'>"."<img src='img/".$row['img']."' style='width:300px'><br>".$row["text"]."</td></tr>";
                         echo "<tr style='height:50px'>";
-                        echo "<td>".'$$:'.$row["c_money"]."</td>";
-                            echo "<td><button type='button' onclick='location.href='add food user a.php?id=".$row['id']."'>修改</button><input type='button' value='刪除' onclick=location.href='del%20food.php?id=".$row['id']."'></td>";
+                        echo "<td colspan='2'>".'$$:'.$row["c_money"]."</td>";
                         echo "</tr>";
                         echo "<br>";
                         echo "</table>";
