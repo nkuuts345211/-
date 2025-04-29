@@ -10,6 +10,7 @@
         <style>
             body {
                 margin: 0;
+                font-family:'DFKai-sb';font-size: 22px;
             }
             .head {
                 text-align: center;

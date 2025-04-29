@@ -1,4 +1,6 @@
-
+body {
+    font-family:'DFKai-sb';font-size: 22px;
+}
 body,
 html {
     height: 100%;

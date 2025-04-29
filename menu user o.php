@@ -9,6 +9,9 @@
     </head>
     <body>
         <style>
+body {
+    font-family:'DFKai-sb';font-size: 22px;
+}
 body,
 html {
     height: 100%;
@@ -25,7 +28,7 @@ html {
 .a1 a{
     text-decoration: none;
     color: white;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
 }
 /* 標題 */

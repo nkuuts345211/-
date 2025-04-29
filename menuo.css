@@ -16,7 +16,7 @@ table {
 .header {
     height: 50px;
     text-align: center;
-    background-color: rgb(252, 153, 6);
+    background-color: blueviolet;
     font-size: 20px;
     font-weight: bold;
 }
@@ -29,9 +29,7 @@ table {
 .content {
     height: 100%;
     text-align: center;
-    background-image: url('/img/OIP.jpg');
-    background-size: cover;
-    background-position: center;
+    
     
 }
 /* 底部 */
@@ -48,7 +46,7 @@ table {
 }
 /* 指向 */
 .Indicator{
-    background-color: rgb(245, 183, 91);
+    background-color: lightblue;
     color: black;
     font-size: 18px;
 }
