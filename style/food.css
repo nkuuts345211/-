@@ -59,3 +59,45 @@ a:hover{
 background-color: lightblue;
 color: darkred;
 }
+img {
+width: 300px;
+height: 300px;
+border: 1px solid lightgray;
+border-radius: 15px;
+box-shadow: 3px 3px 2px lightgray;
+}
+.dd{
+width: 600px;
+height: 300px;
+background-color: lemonchiffon;
+position: absolute;
+z-index: 10;
+left:30%;
+}
+.food {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+}
+
+.food div {
+box-sizing: border-box;
+}
+@media(min-width:1024px) {
+.food div {
+width: calc(25%-20px);
+}
+}
+
+ @media(min-width:800) {
+.food div {
+width: calc(50%-20px);
+}
+}
+
+@media(max-width:799) {
+.food div {
+width: 100%;
+}
+}
