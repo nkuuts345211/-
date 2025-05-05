@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2025-04-28 11:05:52
+-- 產生時間： 2025-05-05 11:03:14
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 7.4.29
 
@@ -79,6 +79,13 @@ CREATE TABLE `order` (
   `c_money` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- 傾印資料表的資料 `order`
+--
+
+INSERT INTO `order` (`id`, `account`, `c_num`, `c_name`, `c_money`) VALUES
+(1, '1212', 'A001', 'menu1', 1000);
+
 -- --------------------------------------------------------
 
 --
@@ -151,7 +158,7 @@ ALTER TABLE `msg`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `user`
