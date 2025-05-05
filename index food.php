@@ -1,67 +1,104 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>菜單</title>
-        <link rel="stylesheet" href="style/food.css">
-    </head>
-    <body>
-        <table>
-            <tr>
-                <td class="header">
-                    <table>
-                        <tr>
-                            <td>
-                                <a href="index.php">首頁</a>
-                            </td>
-                            <td>
-                                <a href="index food.php">菜單</a>
-                            </td>
-                            
-                            <td>
-                                <a href="index login.php">訂餐</a>
-                            </td>
-                            <td>
-                                <a href="index login.php">登入</a>
-                            </td>
-                            <td>
-                                <a href="add user.php">註冊</a>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="5" align="center" class="Indicator">目前位置➝菜單</td>
-            </tr>
-            <?php
-            include ("db.php");
-            $sql="SELECT * FROM `food` WHERE 1";
-            echo "<tr>";
-                echo "<td class='content'>";
-                
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜單</title>
+    <link rel="stylesheet" href="style/food.css">
+    <style>
+        img:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
 
-                $res=mysqli_query($link,$sql);
-                if(mysqli_num_rows($res)>0){
-                    while($row=mysqli_fetch_assoc($res)){
-                        echo "<div class='dd' style='display:none;'><button onclick='no()'>x</button><img id='aa'></div>";
+        .dd {
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .dd button {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+
+        .food {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .food img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="header">
+                <table>
+                    <tr>
+                        <td><a href="index.php">首頁</a></td>
+                        <td><a href="index food.php">菜單</a></td>
+                        <td><a href="index login.php">訂餐</a></td>
+                        <td><a href="index login.php">登入</a></td>
+                        <td><a href="add user.php">註冊</a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" align="center" class="Indicator">目前位置➝菜單</td>
+        </tr>
+
+        <tr>
+            <td class='content'>
+                <div class='dd'><button onclick='no()'>x</button><img id='aa' src="" alt="放大圖片"></div>
+                <div class="food">
+                <?php
+                include("db.php");
+                $sql = "SELECT * FROM `food`";
+                $res = mysqli_query($link, $sql);
+
+                if (mysqli_num_rows($res) > 0) {
+                    while ($row = mysqli_fetch_assoc($res)) {
+                        $id = $row['id'];
+                        $img = $row['img'];
                         echo "<div class='food'>";
-                        echo "<div><img src='img/".$row['img']."'></div>";
-                        
-                        
-                        
-                        
+                        echo "<img src='img/$img' onclick='check(\"$img\")'>";
+                        echo "</div>";
                     }
+                } else {
+                    echo "<p>目前沒有菜單資料。</p>";
                 }
-            //    echo  "<td><img src='\img\menu1.jpg'><p>菜單介紹</p><p>價格</p></td>";
-            echo "</tr>";
-                echo "</table>";
-                echo "</td>";
-            echo "</tr>";
-            ?>
-            <link rel="stylesheet" href="style/food.css">
-      
-        </table>
-    </body>
+                ?>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function check(filename) {
+            const popup = document.querySelector(".dd");
+            document.getElementById("aa").src = "img/" + filename;
+            popup.style.display = 'block';
+        }
+
+        function no() {
+            document.querySelector(".dd").style.display = 'none';
+        }
+    </script>
+    <link rel="stylesheet" href="style/food.css">
+</body>
 </html>
