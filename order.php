@@ -70,13 +70,10 @@ color: darkred;
                     <table class="header" style="height: 12%;">
                         <tr>
                             <td>
-                                <a href="index user u.php">使用者首頁</a>
+                                <a href="order2.php">菜單</a>
                             </td>
                             <td>
-                                <a href="index user u food.php">使用者菜單</a>
-                            </td>
-                            <td>
-                            <a href="msg user.php">使用者留言板</a></td>
+                            <a href="order3.php">留言板</a></td>
                             <td>
                                 <a href="logout.php">登出</a>
                             </td>
@@ -88,7 +85,7 @@ color: darkred;
                     
     <h1>購物車管理</h1>
     <h3>歡迎<?php echo $_SESSION['name']; ?></h3>
-    <button type="sumbit" onclick="location.href='add.php'" >新增</button><br>
+    <button type="sumbit" onclick="location.href='order2.php'" >新增</button><br>
     
     <div id="aa" align="center">
     <td>
@@ -96,7 +93,7 @@ color: darkred;
                 <form method="get">
                 <tr>
                     <td>
-                        <input type="text" name="keyword" placeholder="輸入商品名稱搜尋" value="<?php echo isset($_GET['keyword']) ? $_GET['keyword']:''; ?> ">
+                        <input type="text" name="keyword" placeholder="輸入商品名稱搜尋" value="<?php echo isset($_GET['keyword']) ? $_GET['keyword']:''; ?>">
                     </td>
                     <td>
                         <button type="submit" name="order" value="asc">ID升序</button>
@@ -113,12 +110,13 @@ color: darkred;
                 
                     <tr>
                         <td>流水號</td>
+                        <td>帳號</td>
                         <td>商品編號</td>
                         <td>商品名稱</td>
                         <td>價格</td>
                     </tr>
                     <?php
-                    $sql = "SELECT * FROM `food` WHERE 1";
+                    $sql = "SELECT * FROM `order` WHERE 1";
                     if (isset($_GET['keyword']) && $_GET['keyword'] != '') {
                     $keyword = $_GET['keyword'];
                     $sql .= " AND `c_name` LIKE '%$keyword%'";
@@ -133,6 +131,7 @@ color: darkred;
                         while($row=mysqli_fetch_assoc($res)){
                             echo "<tr>";
                             echo "<td>" . $row["id"] . "</td>";
+                            echo "<td>" . $row["account"] . "</td>";
                             echo "<td>" . $row["c_num"] . "</td>";
                             echo "<td>" . $row["c_name"] . "</td>";
                             echo "<td>" . $row["c_money"] . "</td>";
