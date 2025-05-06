@@ -35,18 +35,19 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="5" align="center" class="Indicator">目前位置➝首頁</td>
+                <td colspan="5" align="center" class="Indicator">目前位置➝關於</td>
             </tr>
             <tr >
                 <td class="content">
                     <table>
                         <tr>
+                            
                             <td>
-                                <button id="prevButton">back</button>
-                            </td>
-                            <td><img src="\img\menu1.jpg" id="myimg"></td>
-                            <td>
-                                <button id="nextButton">next</button>
+                            <h1>製作人</h1>
+                                <h3>鄧益汯</h3>
+                                <h3>黃聖翔</h3>
+                                <h3>黃子杰</h3>
+                                <h3>楊恩愷</h3>
                             </td>
                         </tr>
                     </table>
@@ -54,13 +55,7 @@
             </tr>
 
         </table>
-        <!-- music -->
-        <iframe
-            src="https://www.youtube.com/embed/Df_pGKwDJDU?autoplay=1&loop=1&playlist=maigqMT9KPw&controls=0&showinfo=0&autohide=1"
-            frameborder="0"
-            allow="autoplay"
-            style="width:0; height:0; border:none;"
-            id="music"></iframe>
+
 
         
     </body>
