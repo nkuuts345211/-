@@ -52,7 +52,8 @@
                 echo "<td>".'title:'.$row["title"]."</td>";
                 echo "<td>".'帳號:'.$row["account"]."</td>";
                 echo "</tr>";
-                echo "<tr style='height:400px'><td colspan='2'>".'留言:'.$row["text"]."</td></tr>";
+                echo "<tr style='height:400px'><td>".'留言:'.$row["text"]."</td><td><img src='msgimg/".$row["img"]."'></td></tr>";
+                
                 echo "<tr style='height:50px'>";
                 echo "<td>".'發佈時間:'.$row["add_time"].'　更新時間:'.$row["up_time"]."</td>";
                 

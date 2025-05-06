@@ -45,10 +45,7 @@
         <form action="add2.php" method="post">
             <h1>😎留言版<br>歡迎<?php echo $_SESSION['name']; ?></h1>
 
-            <input
-                type="button"
-                value="新增"
-                onclick="location.href="add.php?id='.$row['id'].'"">
+            <input type="button" value="新增留言" onclick="location.href='add.php'">
         <?php
         $sql="SELECT * FROM `msg` WHERE 1";
         $res=mysqli_query($link,$sql);
@@ -59,7 +56,7 @@
                 echo "<td>".'title:'.$row["title"]."</td>";
                 echo "<td>".'帳號:'.$row["account"]."</td>";
                 echo "</tr>";
-                echo "<tr style='height:400px'><td colspan='2'>".'留言:'.$row["text"]."</td></tr>";
+                echo "<tr style='height:400px'><td colspan='2'>".'留言:'.$row["text"]."<br><img src='msgimg/".$row["img"]."'></td></tr>";
                 echo "<tr style='height:50px'>";
                 echo "<td>".'發佈時間:'.$row["add_time"].'　更新時間:'.$row["up_time"]."</td>";
                 if($_SESSION["account"]==$row["account"]){
