@@ -52,7 +52,7 @@
                         echo "</tr>";
                         echo "<tr style='height:400px'><td colspan='2'>"."<img src='img/".$row['img']."' style='width:300px'><br>".$row["text"]."</td></tr>";
                         echo "<tr style='height:50px'>";
-                        echo "<td>".'$$:'.$row["c_money"]."</td><td><input type='button' value='123' onclick=location.href='order.php?id=".$row['id']."'></td>";
+                        echo "<td>".'$$:'.$row["c_money"]."</td><td><input type='button' value='123' onclick=location.href='orderadd.php?id=".$row['id']."'></td>";
                         echo "</tr>";
                         echo "<br>";
                         echo "</table>";

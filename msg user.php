@@ -35,7 +35,7 @@
         <tr>    
             <td><a href="index user u.php">首頁</a></td>
     <td><a href="index user u food.php">菜單</a></td>
-    <td><a href="order user u.php">訂餐</a></td>
+    <td><a href="order.php">訂餐</a></td>
     <td><a href="logout.php">登出</a></td>
     </tr></table></div>
 <form action="add2.php" method="post">

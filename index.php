@@ -61,8 +61,7 @@
             allow="autoplay"
             style="width:0; height:0; border:none;"
             id="music"></iframe>
-
-        
+<script src="script.js"></script>
     </body>
     
 </html>
