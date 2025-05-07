@@ -11,17 +11,17 @@
         <h1>新增留言板</h1>
         <table border="1px" align="center" width="500px">
             <tr>
-                <td>TITLE</td>
+                <td>標題</td>
                 <td><input type="text" name="title" required></td>
                 
             </tr>
             <tr>
-                <td>TEXT</td>
+                <td>內文</td>
                 <td><input type="text" name="text"  style="height:200px" required></td>
                 
             </tr>
             <tr>
-                <td>IMG</td>
+                <td>圖片</td>
                 <td><input type="file" name="img" accept="image/*" required></td>
             </tr>
             <tr>
