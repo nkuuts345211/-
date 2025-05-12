@@ -43,7 +43,7 @@
 
     <input type="button" value="新增" onclick=location.href="add.php?id='.$row['id'].'">
     <?php
-        $sql="SELECT * FROM `msg` WHERE 1";
+        $sql="SELECT * FROM `msg` WHERE 1 ORDER BY id DESC";
         $res=mysqli_query($link,$sql);
         if(mysqli_num_rows($res)>0){
             while($row=mysqli_fetch_assoc($res)){
