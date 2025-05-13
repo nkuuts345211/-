@@ -1,75 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <?php include("db.php"); ?>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>新增使用者</title>
-    </head>
-    <body>
+<head>
+  <?php include("db.php"); ?>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>新增使用者</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: white;
+      font-family: Arial, sans-serif;
+    }
 
-        <style>
-            body,
-            html {
-                height: 100%;
-                margin: 0;
-            }
-            table {
-                width: 40%;
-                height: 100%;
-                border-collapse: collapse;
-            }
-            .head {
-                height: 50px;
-                text-align: center;
-                background-color: blueviolet;
-                font-size: 30px;
-                font-weight: bold;
-                display: flex;
-            }
-            .title{
-                flex: 1;
-                
-            }
-            
-            .head a {
-                text-decoration: none;
-                color: white;
-                
-            }
-        </style>
-        <div class="head">
-            <div class="title"><a href="index.php">首頁</a></div>
-            <div class="title"><a href="index food.php">菜單</a></div>
+    .header {
+      height: 50px;
+      text-align: center;
+      background-color: rgb(252, 153, 6);
+      font-size: 30px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-            <div class="title"><a href="index login.php">登入</a></div>
-        </div>
-        <form action="adduser2.php" method="post" align="center">
-            <h1>新增使用者</h1>
-            <table border="1px" align="center" width="60%">
-                <tr>
-                    <td>帳號</td>
-                    <td><input type="text" name="account" required  autocomplete="off"></td>
+    .header a {
+      color: white;
+      text-decoration: none;
+      margin: 0 50px;
+    }
 
-                </tr>
-                <tr>
-                    <td>密碼</td>
-                    <td><input type="text" name="password" required  autocomplete="off"></td>
+    .login-title {
+      color: white;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 32px;
+    }
 
-                </tr>
-                <tr>
-                    <td>你的名字</td>
-                    <td><input type="text" name="name" required  autocomplete="off"></td>
+    .login-card {
+      background: rgb(96, 130, 243);
+      padding: 50px 50px;
+      border-radius: 25px;
+      box-shadow: 0 20px 30px rgba(53, 51, 51, 0.9);
+      text-align: center;
+      width: 400px;
+      margin: 30px auto;
+    }
 
-                </tr>
-                <tr>
-                    
-                    <td colspan="2"><input type="submit" value="送出"></td>
+    .login-card h2 {
+      margin-bottom: 30px;
+      font-weight: bold;
+      color: white;
+    }
 
-                </tr>
-            </table>
-            <h4>[]~(￣▽￣)~*</h4>
-        </form>
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
 
-    </body>
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: white;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      font-size: 16px;
+    }
+
+    .login-button {
+      background-color: #222;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 25px;
+      font-size: 16px;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <div class="header">
+    <a href="index.php">首頁</a>
+    <a href="index food.php">菜單</a>
+    <a href="index login.php">登入</a>
+  </div>
+
+  <!-- 新增使用者卡片 -->
+  <form action="adduser2.php" method="post">
+    <div class="login-card">
+      <h2>新增使用者</h2>
+
+      <div class="input-group">
+        <label for="account">帳號</label>
+        <input type="text" name="account" id="account" required autocomplete="off">
+      </div>
+
+      <div class="input-group">
+        <label for="password">密碼</label>
+        <input type="text" name="password" id="password" required autocomplete="off">
+      </div>
+
+      <div class="input-group">
+        <label for="name">你的名字</label>
+        <input type="text" name="name" id="name" required autocomplete="off">
+      </div>
+
+      <button class="login-button" type="submit">送出</button>
+    </div>
+  </form>
+
+</body>
 </html>
