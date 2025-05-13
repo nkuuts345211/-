@@ -18,7 +18,7 @@
         }
     </style>
 </head>
-<body>
+<body align="center">
     <div>
         <h2><a href="menu%20user%20a.php">返回上一頁</a></h2>
     </div>

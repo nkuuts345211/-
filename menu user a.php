@@ -73,7 +73,7 @@
                     echo "<tr style='height:400px'><td colspan='2'>"."<img src='img/".$row['img']."' style='width:300px'><br>".$row["text"]."</td></tr>";
                     echo "<tr style='height:50px'>";
                     echo "<td>".'發佈時間:'.$row["add_time"]."</td>";
-                    echo "<td><button type='button' onclick=location.href='add%20food%20user%20o.php?id=".$row['id']."'>修改</button><input type='button' value='刪除' onclick=location.href='del%20food.php?id=".$row['id']."'></td>";
+                    echo "<td><button type='button' onclick=location.href='add%20food%20user%20a.php?id=".$row['id']."'>修改</button><input type='button' value='刪除' onclick=location.href='del%20food.php?id=".$row['id']."'></td>";
                     echo "</tr>";
                     echo "<br>";
                     echo "</table>";
