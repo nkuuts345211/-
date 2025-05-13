@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/food.css">
     <style>
         img:hover {
-            transform: scale(1.2);
+            transform: scale(1.2); /*圖片放1.2倍*/
             transition: transform 0.3s ease;
         }
 
@@ -21,6 +21,12 @@
             padding: 20px;
             display: none;
             z-index: 1000;
+            text-align: left;
+        }
+        .dd-content {
+            display: flex; /* 水平排列圖片與文字 */
+            align-items: center; /* 垂直置中對齊 */
+            gap: 20px; /* 圖片與文字之間的間距 */
         }
 
         .dd button {
@@ -30,7 +36,6 @@
         }
 
         .food {
-            display: inline-block;
             margin: 10px;
             text-align: center;
         }
@@ -64,7 +69,15 @@
 
         <tr>
             <td class='content'>
-                <div class='dd'><button onclick='no()'>x</button><img id='aa' src="" alt="放大圖片"></div>
+                <!-- 彈出區塊 -->
+                <div class='dd'>
+                    <button onclick='no()'>x</button>
+                    <div class="dd-content">
+                    <img id='aa' src="" alt="放大圖片">
+                    <p id="desc"></p> <!-- 顯示文字說明 -->
+                </div>
+                </div>
+
                 <div class="food">
                 <?php
                 include("db.php");
@@ -75,8 +88,9 @@
                     while ($row = mysqli_fetch_assoc($res)) {
                         $id = $row['id'];
                         $img = $row['img'];
+                        $desc = htmlspecialchars($row['text']);
                         echo "<div class='food'>";
-                        echo "<img src='img/$img' onclick='check(\"$img\")'>";
+                        echo "<img src='img/$img' onclick='check(\"$img\", \"$desc\")'>";
                         echo "</div>";
                     }
                 } else {
@@ -89,9 +103,10 @@
     </table>
 
     <script>
-        function check(filename) {
+        function check(filename, text) {
             const popup = document.querySelector(".dd");
             document.getElementById("aa").src = "img/" + filename;
+            document.getElementById("desc").innerText = text;
             popup.style.display = 'block';
         }
 
@@ -99,6 +114,5 @@
             document.querySelector(".dd").style.display = 'none';
         }
     </script>
-    <link rel="stylesheet" href="style/food.css">
 </body>
 </html>
