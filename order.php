@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <?php include "db.php"; ?>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>訂餐系統</title>
@@ -48,7 +49,8 @@
     </tr>
 
     <?php
-    $sql = "SELECT * FROM `order` WHERE 1";
+    $account=$_SESSION["account"];
+    $sql = "SELECT * FROM `order` WHERE account ='$account'";
     if (!empty($_GET['keyword'])) {
         $keyword = $_GET['keyword'];
         $sql .= " AND `c_name` LIKE '%$keyword%'";
@@ -82,7 +84,7 @@
                 <td>總金額</td>
             </tr>
             <?php
-            $sql_total = "SELECT account, SUM(c_money * amount) AS total FROM `order` GROUP BY account";
+            $sql_total = "SELECT account, SUM(c_money * amount) AS total FROM `order` WHERE account  ='$account' GROUP BY account ";
             $res_total = mysqli_query($link, $sql_total);
             while ($row = mysqli_fetch_assoc($res_total)) {
                 echo "<tr>";
