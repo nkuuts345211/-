@@ -75,6 +75,7 @@
                     <div class="dd-content">
                     <img id='aa' src="" alt="放大圖片">
                     <p id="desc"></p> <!-- 顯示文字說明 -->
+                    <p id="price"></p>
                 </div>
                 </div>
 
@@ -88,9 +89,10 @@
                     while ($row = mysqli_fetch_assoc($res)) {
                         $id = $row['id'];
                         $img = $row['img'];
+                        $price = $row['c_money'];
                         $desc = htmlspecialchars($row['text']);
                         echo "<div class='food'>";
-                        echo "<img src='img/$img' onclick='check(\"$img\", \"$desc\")'>";
+                        echo "<img src='img/$img' onclick='check(\"$img\", \"$desc,價格:$price 元\")'>";
                         echo "</div>";
                     }
                 } else {
@@ -103,7 +105,7 @@
     </table>
 
     <script>
-        function check(filename, text) {
+        function check(filename, text,price) {
             const popup = document.querySelector(".dd");
             document.getElementById("aa").src = "img/" + filename;
             document.getElementById("desc").innerText = text;
