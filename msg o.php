@@ -60,7 +60,7 @@
                 echo "<tr style='height:50px'>";
                 echo "<td>".'發佈時間:'.$row["add_time"].'　更新時間:'.$row["up_time"]."</td>";
                 if($_SESSION["account"]==$row["account"]){
-                    echo "<td><input type='button' value='刪除' onclick=location.href='del.php?id=".$row['id']."'></td>";
+                    echo "<td><input type='button' value='修改' onclick=location.href='fixmsg.php?id=".$row['id']."'><input type='button' value='刪除' onclick=location.href='del.php?id=".$row['id']."'></td>";
                 }else{
                     echo "<td></td>";
                 }
