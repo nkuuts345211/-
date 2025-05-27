@@ -69,6 +69,7 @@
         <a href="index user o.php">首頁</a>
         <a href="index user o food.php">菜單</a>
         <a href="menu user o.php">編輯菜單</a>
+        <a href="order user o.php">訂單</a>
         <a href="msg o.php">留言板</a>
         <a href="logout.php">登出</a>
     </div>

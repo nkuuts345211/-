@@ -12,9 +12,9 @@
 
     <table class="header" style="height: 12%;">
         <tr>
-            <td><a href="index user a.php">首頁</a></td>
-            <td><a href="order2.php">菜單</a></td>
-            <td><a href="order3.php">留言板</a></td>
+            <td><a href="index user o.php">首頁</a></td>
+            <td><a href="index user o food.php">菜單</a></td>
+            <td><a href="msg o.php">留言板</a></td>
             <td><a href="logout.php">登出</a></td>
         </tr>
         <tr>

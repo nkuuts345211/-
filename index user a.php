@@ -70,6 +70,7 @@
         <a href="index user a food.php">菜單</a>
         <a href="admin fix user.php">編輯使用者</a>
         <a href="menu user a.php">編輯菜單</a>
+        <a href="order.php">訂單</a>
         <a href="msg admin.php">留言板</a>
         <a href="logout.php">登出</a>
     </div>
