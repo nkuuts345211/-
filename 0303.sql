@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2025-05-09 16:43:46
--- 伺服器版本： 10.4.32-MariaDB
--- PHP 版本： 8.0.30
+-- 產生時間： 2025-05-27 06:01:00
+-- 伺服器版本： 10.4.24-MariaDB
+-- PHP 版本： 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,7 +35,7 @@ CREATE TABLE `food` (
   `img` text NOT NULL,
   `add_time` datetime NOT NULL,
   `text` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `food`
@@ -63,7 +63,14 @@ CREATE TABLE `msg` (
   `img` text NOT NULL,
   `add_time` datetime NOT NULL,
   `up_time` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `msg`
+--
+
+INSERT INTO `msg` (`id`, `account`, `title`, `text`, `img`, `add_time`, `up_time`) VALUES
+(1, '1212', '123', '123', '20250527050106_5010.jpg', '2025-05-27 11:01:06', NULL);
 
 -- --------------------------------------------------------
 
@@ -78,7 +85,7 @@ CREATE TABLE `order` (
   `c_name` varchar(20) NOT NULL,
   `c_money` int(11) NOT NULL,
   `amount` int(11) DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `order`
@@ -86,6 +93,20 @@ CREATE TABLE `order` (
 
 INSERT INTO `order` (`id`, `account`, `c_num`, `c_name`, `c_money`, `amount`) VALUES
 (1, '1212', 'A001', 'menu1', 1000, 1);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `reply`
+--
+
+CREATE TABLE `reply` (
+  `id` int(11) NOT NULL,
+  `msg_id` int(11) DEFAULT NULL,
+  `account` varchar(20) DEFAULT NULL,
+  `reply_text` text DEFAULT NULL,
+  `add_time` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -99,7 +120,7 @@ CREATE TABLE `user` (
   `password` varchar(20) NOT NULL,
   `name` varchar(20) NOT NULL,
   `type` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `user`
@@ -134,6 +155,12 @@ ALTER TABLE `order`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `reply`
+--
+ALTER TABLE `reply`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `user`
 --
 ALTER TABLE `user`
@@ -153,13 +180,19 @@ ALTER TABLE `food`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `msg`
 --
 ALTER TABLE `msg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order`
 --
 ALTER TABLE `order`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `reply`
+--
+ALTER TABLE `reply`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `user`
