@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = $result->fetch_assoc();
     $c_num = $row["c_num"];
     $c_name = $row["c_name"];
-    $c_money = $row["c_money"];
+    $c_money = $row["c_money"] * 0.9;
 
     // 最終確認提交
     if (isset($_POST["amount"])) {

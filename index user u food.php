@@ -48,7 +48,7 @@
                         echo "</tr>";
                         echo "<tr style='height:400px'><td colspan='2'><img src='img/".$row['img']."' style='width:300px'><br>".$row["text"]."</td></tr>";
                         echo "<tr style='height:50px'>";
-                        echo "<td>$$:".$row["c_money"]."</td>";
+                        echo "<td>$$:".$row["c_money"] * 0.9."</td>";
                         echo "<td>";
                         echo "數量: <input type='number' name='buy_amount' value='1' min='1' required>";
                         echo "<input type='hidden' name='id' value='".$row["id"]."'>";
