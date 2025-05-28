@@ -99,10 +99,14 @@ if(mysqli_num_rows($res)>0){
         echo "<td>".'發佈時間:'.$row["add_time"].'　更新時間:'.$row["up_time"]."</td>";
         
         echo "<td>";
-        echo "<input type='button' value='修改' onclick=\"location.href='fixmsg.php?id=".$row['id']."'\">";
+                if($row["account"]==$_SESSION["account"]){
+                echo "<input type='button' value='修改' onclick=\"location.href='fixmsg.php?id=".$row['id']."'\">";
         echo "<input type='button' value='刪除' onclick=\"location.href='del.php?id=".$row['id']."'\">";
-        echo "<button type='button' class='reply-toggle' onclick=\"toggleReply(".$row['id'].")\">回覆</button>";
-        echo "</td>";
+                }else{
+
+                }
+                echo "<button type='button' class='reply-toggle' onclick=\"toggleReply(".$row['id'].")\">回覆</button>";
+                echo "</td>";
         
         echo "</tr>";
         echo "</table>";

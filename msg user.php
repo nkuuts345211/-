@@ -83,9 +83,15 @@
                 echo "<tr style='height:50px'>";
                 echo "<td>".'發佈時間:'.$row["add_time"].'　更新時間:'.$row["up_time"]."</td>";
 
-                echo "<td>
-                '<button type='button' class='reply-toggle' onclick=\"toggleReply(".$row['id'].")\">回覆</button>'
-                </td>";
+                echo "<td>";
+                if($row["account"]==$_SESSION["account"]){
+                echo "<input type='button' value='修改' onclick=\"location.href='fixmsg.php?id=".$row['id']."'\">";
+        echo "<input type='button' value='刪除' onclick=\"location.href='del.php?id=".$row['id']."'\">";
+                }else{
+
+                }
+                echo "<button type='button' class='reply-toggle' onclick=\"toggleReply(".$row['id'].")\">回覆</button>";
+                echo "</td>";
                 echo "</table>";
                 // Reply section
         echo "<div class='reply-section' style='width:700px; margin:0 auto;'>";

@@ -18,7 +18,7 @@
             <td><a href="logout.php">登出</a></td>
         </tr>
         <tr>
-            <td colspan="3" class="Indicator">目前位置➝訂餐系統</td>
+            <td colspan="4" class="Indicator">目前位置➝訂餐系統</td>
         </tr>
     </table>
 
