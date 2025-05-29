@@ -1,135 +1,114 @@
-
 body {
-    font-family:'DFKai-sb';font-size: 22px;
+    font-family: 'DFKai-sb';
+    font-size: 22px;
 }
-body,
-html {
-height: 100%;
-margin: 0;
+body, html {
+    height: 100%;
+    margin: 0;
 }
 table {
-width: 100%;
-height: 100%;
-border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 /* 標題 */
 .header {
-height: 50px;
-text-align: center;
-background-color: rgb(252, 153, 6);
-font-size: 20px;
-font-weight: bold;
+    width: 100%;
+    background-color: #ff9800;
+    color: white;
+    text-align: center;
 }
-/* 標題的連結 */
-.header a{
-color:white;
-text-decoration: none;
-}
-/* 主畫面(中) */
-.content {
-height: 100%;
-text-align: center;
 
-
+.header table {
+    width: 100%;
 }
+
+.header td {
+    padding: 15px 0;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.header a:hover {
+    background-color: #e68900;
+}
+
+/* 指示區 */
+.Indicator {
+    background-color: rgb(245, 183, 91);
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 0;
+}
+
 /* 底部 */
 .footer {
-height: 50px;
-text-align: center;
-background-color: #d0d0d0;
-position: relative;
+    height: 50px;
+    text-align: center;
+    background-color: #d0d0d0;
+    position: relative;
 }
+
 /* 中間圖大小 */
-#myimg{
-height: 70%;
-width: auto;
+#myimg {
+    height: 70%;
+    width: auto;
 }
-/* 指向 */
-.Indicator{
-background-color:rgb(245, 183, 91);
-color: black;
-font-size: 18px;
+
+/* 滑鼠拖過去連結 */
+a:hover {
+    background-color: lightblue;
+    color: darkred;
 }
-/* 連結 */
-a{
-text-decoration: none;
-}
-/* 滑鼠拖過去 */
-a:hover{
-background-color: lightblue;
-color: darkred;
-}
+
 img {
-width: 300px;
-height: 300px;
-border: 1px solid lightgray;
-border-radius: 15px;
-box-shadow: 3px 3px 2px lightgray;
-}
-.dd{
-width: 600px;
-height: 300px;
-background-color: lemonchiffon;
-position: absolute;
-z-index: 10;
-left:30%;
-}
-.food {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 20px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    box-shadow: 3px 3px 2px lightgray;
 }
 
-.food div {
-box-sizing: border-box;
-}
-@media(min-width:1024px) {
-.food div {
-width: calc(25%-20px);
-}
-}
-
- @media(min-width:800) {
-.food div {
-width: calc(50%-20px);
-}
-}
-
-@media(max-width:799) {
-.food div {
-width: 100%;
-}
-}
-img:hover {
-transform: scale(1.2); /*圖片放1.2倍*/
-transition: transform 0.3s ease;
-}
 .dd {
-position: fixed;
-top: 10%;
-left: 50%;
-transform: translateX(-50%);
-background-color: #fff;
-border: 1px solid #ccc;
-padding: 20px;
-display: none;
-z-index: 1000;
-text-align: left;
+    width: 600px;
+    height: 300px;
+    background-color: lemonchiffon;
+    position: absolute;
+    z-index: 10;
+    left: 30%;
 }
-.dd-content {
-display: flex; /* 水平排列圖片與文字 */
-align-items: center; /* 垂直置中對齊 */
-gap: 20px; /* 圖片與文字之間的間距 */
+
+/* 餐點區塊 */
+.food {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
-.dd button {
-position: absolute;
-top: 5px;
- right: 10px;
+
+.food div {
+    box-sizing: border-box;
 }
-.food img {
-width: 150px;
-height: 150px;
-object-fit: cover;
-cursor: pointer;
+
+@media (min-width: 1024px) {
+    .food div {
+        width: calc(25% - 20px);
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1023px) {
+    .food div {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 799px) {
+    .food div {
+        width: 100%;
+    }
 }
