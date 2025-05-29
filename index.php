@@ -102,6 +102,7 @@
             "img/menu5.jpg",
 
         ];
+        
         let currentIndex = 0;
         const imgElement = document.getElementById("myimg");
 

@@ -110,6 +110,11 @@
       </div>
 
       <div class="input-group">
+        <label for="password">確認密碼</label>
+        <input type="text" name="pa" id="pa" required autocomplete="off">
+      </div>
+
+      <div class="input-group">
         <label for="name">你的名字</label>
         <input type="text" name="name" id="name" required autocomplete="off">
       </div>
