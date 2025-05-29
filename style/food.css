@@ -101,3 +101,35 @@ width: calc(50%-20px);
 width: 100%;
 }
 }
+img:hover {
+transform: scale(1.2); /*圖片放1.2倍*/
+transition: transform 0.3s ease;
+}
+.dd {
+position: fixed;
+top: 10%;
+left: 50%;
+transform: translateX(-50%);
+background-color: #fff;
+border: 1px solid #ccc;
+padding: 20px;
+display: none;
+z-index: 1000;
+text-align: left;
+}
+.dd-content {
+display: flex; /* 水平排列圖片與文字 */
+align-items: center; /* 垂直置中對齊 */
+gap: 20px; /* 圖片與文字之間的間距 */
+}
+.dd button {
+position: absolute;
+top: 5px;
+ right: 10px;
+}
+.food img {
+width: 150px;
+height: 150px;
+object-fit: cover;
+cursor: pointer;
+}
