@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include("db.php");
 
 // Check if user is logged in
