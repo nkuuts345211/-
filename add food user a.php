@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
         div{
-            background-color: purple;
+            background-color: lightblue;
             margin-inline: auto;
             width: 15%;
         }
