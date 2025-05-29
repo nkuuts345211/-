@@ -15,19 +15,17 @@
         }
 
         .menu-card {
-            background-color: white;
-            width: 320px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
+    height: 460px; /* 視需求調整 */
+    display: flex;
+    flex-direction: column;
+}
 
         .menu-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
 
         .menu-card-content {
             padding: 15px;
@@ -89,7 +87,7 @@
     </div>
 
     <!-- 指示列 -->
-    <div class="Indicator">目前位置➝admin菜單</div>
+    <div class="Indicator" align="center">目前位置➝admin菜單</div>
 
     <div class="menu-container">
         <?php

@@ -89,7 +89,6 @@ color: darkred;
                     
     <h1>系統管理</h1>
     <h3>歡迎<?php echo $_SESSION['name']; ?></h3>
-    <button type="sumbit" onclick="location.href='add.php'" >新增</button><br>
     <script>
         function aaa(){
             document.getElementById("aa").style.display="block";
@@ -110,7 +109,7 @@ color: darkred;
                 <form method="get">
                 <tr>
                     <td>
-                        <input type="text" name="keyword" placeholder="輸入商品名稱搜尋" value="<?php echo isset($_GET['keyword']) ? $_GET['keyword']:''; ?> ">
+                        <input type="text" name="keyword" placeholder="輸入商品名稱搜尋" value="<?php echo isset($_GET['keyword']) ? $_GET['keyword']:''; ?>">
                     </td>
                     <td>
                         <button type="submit" name="order" value="asc">ID升序</button>
@@ -166,7 +165,7 @@ color: darkred;
                 <form method="get">
                 <tr>
                     <td>
-                        <input type="text" name="keyword" placeholder="輸入會員名稱搜尋" value="<?php echo isset($_GET['keyword']) ? $_GET['keyword']:''; ?> ">
+                        <input type="text" name="keyword" placeholder="輸入會員名稱搜尋" value="<?php echo isset($_GET['keyword']) ? $_GET['keyword']:''; ?>">
                     </td>
                     <td>
                         <button type="submit" name="order" value="asc">ID升序</button>
