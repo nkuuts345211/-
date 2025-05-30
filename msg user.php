@@ -95,7 +95,7 @@
                 echo "</table>";
                 // Reply section
         echo "<div class='reply-section' style='width:700px; margin:0 auto;'>";
-        
+        echo "</form>";
         // Display existing replies
         $reply_sql = "SELECT r.*, u.name FROM `reply` r LEFT JOIN `user` u ON r.account = u.account WHERE r.msg_id = ".$row['id']." ORDER BY r.add_time ASC";
         $reply_res = mysqli_query($link, $reply_sql);

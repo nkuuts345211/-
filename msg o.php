@@ -110,7 +110,7 @@ if(mysqli_num_rows($res)>0){
         
         echo "</tr>";
         echo "</table>";
-        
+        echo "</form>";
         // Reply section
         echo "<div class='reply-section' style='width:700px; margin:0 auto;'>";
         
@@ -154,7 +154,7 @@ if(mysqli_num_rows($res)>0){
 }
     ?>
 
-        </form>
+       
         
 <script>
 function toggleReply(msgId) {
