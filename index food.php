@@ -46,6 +46,11 @@
             object-fit: cover;
             cursor: pointer;
         }
+        .sort{
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
@@ -66,7 +71,16 @@
         <tr>
             <td colspan="5" align="center" class="Indicator">目前位置➝菜單</td>
         </tr>
-
+        <tr align="center" class="sort">
+            <td >
+                <input type="button" value="全部">
+                <input type="button" value="主餐">
+                <input type="button" value="炸物">
+                <input type="button" value="湯品">
+                <input type="button" value="飲品">
+                <input type="button" value="點心">
+            </td>
+        </tr>
         <tr>
             <td class='content'>
                 <!-- 彈出區塊 -->

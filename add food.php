@@ -26,6 +26,11 @@
                 
             </tr>
             <tr>
+                <td>選項</td>
+                <td><input type="text" name="option" autocomplete="off" required></td>
+                
+            </tr>
+            <tr>
                 <td>圖片</td>
                 <td><input type="file" name="img" accept="image/*" required></td>
                 
