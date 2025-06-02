@@ -40,18 +40,31 @@
             margin: 10px;
             text-align: center;
         }
-
+        .food-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
         .food img {
             width: 150px;
             height: 150px;
             object-fit: cover;
             cursor: pointer;
         }
-        .sort{
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
+        .sort {
+            text-align: center;
+            margin: 20px 0;
         }
+
+        .sort button {
+            border-radius: 20px;
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
@@ -72,14 +85,14 @@
         <tr>
             <td colspan="5" align="center" class="Indicator">目前位置➝菜單</td>
         </tr>
-        <tr align="center" class="sort">
-            <td >
-                <button onclick="aall">全部</button>
-                <button onclick="ddinner">主餐</button>
-                <button onclick="ooil">炸物</button>
-                <button onclick="ssoup">湯品</button>
-                <button onclick="ddirnk">飲品</button>
-                <button onclick="ssnack">點心</button>
+        <tr align="center">
+            <td  class="sort">
+                <button onclick="filterFood('all')">全部</button>
+                <button onclick="filterFood('主餐')">主餐</button>
+                <button onclick="filterFood('炸物')">炸物</button>
+                <button onclick="filterFood('湯品')">湯品</button>
+                <button onclick="filterFood('飲品')">飲品</button>
+                <button onclick="filterFood('點心')">點心</button>
             </td>
         </tr>
         <tr>
@@ -94,7 +107,7 @@
                 </div>
                 </div>
 
-                <div class="food" id="all">
+                <div class="food-container" id="foodContainer">
                 <?php
                 $sql = "SELECT * FROM `food`";
                 $res = mysqli_query($link, $sql);
@@ -105,7 +118,7 @@
                         $img = $row['img'];
                         $price = $row['c_money'];
                         $desc = htmlspecialchars($row['text']);
-                        echo "<div class='food'>";
+                        echo "<div class='food' data-category='".$row["option"]."'>";
                         echo "<img src='img/$img' onclick='check(\"$img\", \"$desc,價格:$price 元\")'>";
                         echo "</div>";
                     }
@@ -114,26 +127,7 @@
                 }
                 ?>
                 </div>
-                <div class="food" id="dinner">
-                <?php
-                $sql = "SELECT * FROM `food`";
-                $res = mysqli_query($link, $sql);
-
-                if (mysqli_num_rows($res) > 0) {
-                    while ($row = mysqli_fetch_assoc($res)) {
-                        $id = $row['id'];
-                        $img = $row['img'];
-                        $price = $row['c_money'];
-                        $desc = htmlspecialchars($row['text']);
-                        echo "<div class='food'>";
-                        echo "<img src='img/$img' onclick='check(\"$img\", \"$desc,價格:$price 元\")'>";
-                        echo "</div>";
-                    }
-                } else {
-                    echo "<p>目前沒有菜單資料。</p>";
-                }
-                ?>
-                </div>
+                
             </td>
         </tr>
     </table>
@@ -149,54 +143,19 @@
         function no() {
             document.querySelector(".dd").style.display = 'none';
         }
-        function aall(){
-            document.getElementById("all").style.display="block";
-            document.getElementById("dinner").style.display="none";
-            document.getElementById("oil").style.display="none";
-            document.getElementById("soup").style.display="none";
-            document.getElementById("drink").style.display="none";
-            document.getElementById("snake").style.display="none";
+        function filterFood(category) {
+            const items = document.querySelectorAll(".food");
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         }
-        function ddinner(){
-            document.getElementById("all").style.display="none";
-            document.getElementById("dinner").style.display="block";
-            document.getElementById("oil").style.display="none";
-            document.getElementById("soup").style.display="none";
-            document.getElementById("drink").style.display="none";
-            document.getElementById("snake").style.display="none";
-        }
-        function ooil(){
-            document.getElementById("all").style.display="none";
-            document.getElementById("dinner").style.display="none";
-            document.getElementById("oil").style.display="block";
-            document.getElementById("soup").style.display="none";
-            document.getElementById("drink").style.display="none";
-            document.getElementById("snake").style.display="none";
-        }
-        function ssoup(){
-            document.getElementById("all").style.display="none";
-            document.getElementById("dinner").style.display="none";
-            document.getElementById("oil").style.display="none";
-            document.getElementById("soup").style.display="block";
-            document.getElementById("drink").style.display="none";
-            document.getElementById("snake").style.display="none";
-        }
-        function ddrink(){
-            document.getElementById("all").style.display="none";
-            document.getElementById("dinner").style.display="none";
-            document.getElementById("oil").style.display="none";
-            document.getElementById("soup").style.display="none";
-            document.getElementById("drink").style.display="block";
-            document.getElementById("snake").style.display="none";
-        }
-        function ssnake(){
-            document.getElementById("all").style.display="none";
-            document.getElementById("dinner").style.display="none";
-            document.getElementById("oil").style.display="none";
-            document.getElementById("soup").style.display="none";
-            document.getElementById("drink").style.display="none";
-            document.getElementById("snake").style.display="block";
-        }
+
+        // 預設顯示全部
+        filterFood('all');
     </script>
 </body>
 </html>
