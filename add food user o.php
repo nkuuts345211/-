@@ -36,11 +36,12 @@
                         echo "<tr><td>num</td><td><input type='text' name='c_num' value='".$row["c_num"]."'></td></tr>";
                         echo "<tr><td>name</td><td><input type='text' name='c_name' value='".$row["c_name"]."'></td></tr>";
                         echo "<tr><td>money</td><td><input type='text' name='c_money' value='".$row["c_money"]."'></td></tr>";
+                        echo "<tr><td>option</td><td><input type='text' name='option' value='".$row["option"]."'></td></tr>";
                         echo "<tr><td>img</td><td><input type='file' name='img' accept='image/*' required></td></tr>";
                         echo "<tr><td>text</td><td><input type='text' name='text' style='height:200px' value='".$row["text"]."'></td></tr>";
-                        echo "<tr><td colspan='2'><input type='submit' value='送出' onclick=location.href='add%20food%20user.php'></td></tr>";
                         echo "<input type='hidden' name='id' value='$id'>";
                         echo "</table>";
+                        echo "<tr><td colspan='2'><input type='submit' value='送出' onclick=location.href='add%20food%20user.php'></td></tr>";
                         echo "</form>";
 
                     }

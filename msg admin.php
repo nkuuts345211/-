@@ -116,9 +116,9 @@
                     echo "<small>(".$reply_row['add_time'].")</small>";
                     
                     // Add delete button for admin or reply owner
-                    if( $_SESSION['account'] == $reply_row['account']) {
+                    
                         echo " <button onclick=\"if(confirm('確定要刪除這個回覆嗎？')) location.href='delete_reply.php?id=".$reply_row['id']."'\" style='background-color:#dc3545; color:white; border:none; padding:2px 5px; font-size:10px; border-radius:2px; cursor:pointer;'>刪除</button>";
-                    }
+                    
                     
                     echo "<br>";
                     echo "<p>".$reply_row['reply_text']."</p>";
