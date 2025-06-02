@@ -1,3 +1,22 @@
+<?php
+include("db.php");
+$sql = "SELECT * FROM `food`";
+$result = mysqli_query($link, $sql);
+
+$images = [];
+$text=[];
+
+if ($result) {
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+            $images[] = 'img/' . $row["img"];
+            $text[] = $row["text"];
+        }
+    }
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -123,21 +142,8 @@
 
     <!-- JS 輪播 -->
     <script>
-        const images = [
-            "img/menu1.jpg",
-            "img/menu2.jpg",
-            "img/menu3.jpg",
-            "img/menu4.jpg",
-            "img/menu5.jpg"
-        ];
-
-        const captions = [
-            "香酥炸雞腿",
-            "經典牛肉漢堡",
-            "泰式酸辣海鮮湯",
-            "義大利蕃茄海鮮麵",
-            "蜂蜜芥末炸雞塊"
-        ];
+        const images = <?= json_encode($images) ?>;
+    const captions = <?= json_encode($text) ?>;
 
         let currentIndex = 0;
         const imgElement = document.getElementById("myimg");
