@@ -12,6 +12,7 @@ if(mysqli_num_rows($res)>0){
         while($row=mysqli_fetch_assoc($res)){
             $_SESSION["account"]=$row["account"];
             $_SESSION["name"]=$row["name"];
+            $_SESSION["type"]=$row["type"];
             if($row['type']=="a"){
                 header("location:index user a.php");
             }elseif($row['type']=="o"){

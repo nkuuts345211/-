@@ -21,8 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = $result->fetch_assoc();
     $c_num = $row["c_num"];
     $c_name = $row["c_name"];
+    if($_SESSION["type"]=="u"){
     $c_money = $row["c_money"] * 0.9;
-
+}else{
+    $c_money = $row["c_money"];
+}
     // 最終確認提交
     if (isset($_POST["amount"])) {
         $amount = intval($_POST["amount"]);
