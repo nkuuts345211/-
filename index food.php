@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+    <?php  include("db.php");?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>菜單</title>
@@ -73,12 +74,12 @@
         </tr>
         <tr align="center" class="sort">
             <td >
-                <input type="button" value="全部">
-                <input type="button" value="主餐">
-                <input type="button" value="炸物">
-                <input type="button" value="湯品">
-                <input type="button" value="飲品">
-                <input type="button" value="點心">
+                <button onclick="aall">全部</button>
+                <button onclick="ddinner">主餐</button>
+                <button onclick="ooil">炸物</button>
+                <button onclick="ssoup">湯品</button>
+                <button onclick="ddirnk">飲品</button>
+                <button onclick="ssnack">點心</button>
             </td>
         </tr>
         <tr>
@@ -93,9 +94,28 @@
                 </div>
                 </div>
 
-                <div class="food">
+                <div class="food" id="all">
                 <?php
-                include("db.php");
+                $sql = "SELECT * FROM `food`";
+                $res = mysqli_query($link, $sql);
+
+                if (mysqli_num_rows($res) > 0) {
+                    while ($row = mysqli_fetch_assoc($res)) {
+                        $id = $row['id'];
+                        $img = $row['img'];
+                        $price = $row['c_money'];
+                        $desc = htmlspecialchars($row['text']);
+                        echo "<div class='food'>";
+                        echo "<img src='img/$img' onclick='check(\"$img\", \"$desc,價格:$price 元\")'>";
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<p>目前沒有菜單資料。</p>";
+                }
+                ?>
+                </div>
+                <div class="food" id="dinner">
+                <?php
                 $sql = "SELECT * FROM `food`";
                 $res = mysqli_query($link, $sql);
 
@@ -128,6 +148,54 @@
 
         function no() {
             document.querySelector(".dd").style.display = 'none';
+        }
+        function aall(){
+            document.getElementById("all").style.display="block";
+            document.getElementById("dinner").style.display="none";
+            document.getElementById("oil").style.display="none";
+            document.getElementById("soup").style.display="none";
+            document.getElementById("drink").style.display="none";
+            document.getElementById("snake").style.display="none";
+        }
+        function ddinner(){
+            document.getElementById("all").style.display="none";
+            document.getElementById("dinner").style.display="block";
+            document.getElementById("oil").style.display="none";
+            document.getElementById("soup").style.display="none";
+            document.getElementById("drink").style.display="none";
+            document.getElementById("snake").style.display="none";
+        }
+        function ooil(){
+            document.getElementById("all").style.display="none";
+            document.getElementById("dinner").style.display="none";
+            document.getElementById("oil").style.display="block";
+            document.getElementById("soup").style.display="none";
+            document.getElementById("drink").style.display="none";
+            document.getElementById("snake").style.display="none";
+        }
+        function ssoup(){
+            document.getElementById("all").style.display="none";
+            document.getElementById("dinner").style.display="none";
+            document.getElementById("oil").style.display="none";
+            document.getElementById("soup").style.display="block";
+            document.getElementById("drink").style.display="none";
+            document.getElementById("snake").style.display="none";
+        }
+        function ddrink(){
+            document.getElementById("all").style.display="none";
+            document.getElementById("dinner").style.display="none";
+            document.getElementById("oil").style.display="none";
+            document.getElementById("soup").style.display="none";
+            document.getElementById("drink").style.display="block";
+            document.getElementById("snake").style.display="none";
+        }
+        function ssnake(){
+            document.getElementById("all").style.display="none";
+            document.getElementById("dinner").style.display="none";
+            document.getElementById("oil").style.display="none";
+            document.getElementById("soup").style.display="none";
+            document.getElementById("drink").style.display="none";
+            document.getElementById("snake").style.display="block";
         }
     </script>
 </body>
