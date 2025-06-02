@@ -105,8 +105,8 @@
             echo "<div class='reply-section' style='width:700px; margin:0 auto;'>";
             
             // Display existing replies
-            $reply_sql = "SELECT r.*, u.name FROM `reply` r LEFT JOIN `user` u  WHERE r.msg_id = ".$row['id']." ORDER BY r.add_time ASC";
-            $reply_res = mysqli_query($link, $reply_sql);
+           $reply_sql = "SELECT r.*, u.name FROM `reply` r LEFT JOIN `user` u ON r.account = u.account   WHERE r.msg_id = ".$row['id']." ORDER BY r.add_time ASC";
+             $reply_res = mysqli_query($link, $reply_sql);
             
             if(mysqli_num_rows($reply_res) > 0) {
                 echo "<h4>回覆 (".mysqli_num_rows($reply_res)."):</h4>";
