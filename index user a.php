@@ -1,3 +1,22 @@
+<?php
+include("db.php");
+$sql = "SELECT * FROM `food`";
+$result = mysqli_query($link, $sql);
+
+$images = [];
+$text=[];
+
+if ($result) {
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+            $images[] = 'img/' . $row["img"];
+            $text[] = $row["text"];
+        }
+    }
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -6,7 +25,6 @@
     <title>管理者首頁</title>
     <link rel="stylesheet" href="style/index.css">
     <style>
-        /* 額外美化 */
         body, html {
             margin: 0;
             height: 100%;
@@ -39,12 +57,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 500px;
+            flex-direction: column;
+            height: 600px;
             margin-top: 30px;
         }
         #myimg {
-            max-height: 400px;
-            max-width: 80%;
+            width: 600px;
+            height: 80%;
+            object-fit: cover;
             transition: opacity 0.5s;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -59,6 +79,30 @@
         }
         .carousel-button:hover {
             background-color: #f0f0f0;
+        }
+        .dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .dot.active {
+            background-color: #717171;
+        }
+        .caption {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -81,9 +125,13 @@
 
     <!-- 輪播區 -->
     <div class="carousel-container">
-        <button class="carousel-button" id="prevButton">◀</button>
-        <img src="img/menu1.jpg" id="myimg">
-        <button class="carousel-button" id="nextButton">▶</button>
+        <div style="display: flex; align-items: center;">
+            <button class="carousel-button" id="prevButton">◀</button>
+            <img src="img/menu1.jpg" id="myimg">
+            <button class="carousel-button" id="nextButton">▶</button>
+        </div>
+        <div class="caption" id="caption">香酥炸雞腿</div>
+        <div class="dots" id="dotsContainer"></div>
     </div>
 
     <!-- 音樂 -->
@@ -96,30 +144,48 @@
 
     <!-- JS 輪播 -->
     <script>
-        const images = [
-            "img/menu1.jpg",
-            "img/menu2.jpg",
-            "img/menu3.jpg",
-            "img/menu4.jpg",
-            "img/menu5.jpg",
+        const images = <?= json_encode($images) ?>;
+    const captions = <?= json_encode($text) ?>;
 
-        ];
         let currentIndex = 0;
         const imgElement = document.getElementById("myimg");
+        const captionElement = document.getElementById("caption");
+        const dotsContainer = document.getElementById("dotsContainer");
+
+        // 建立原點按鈕
+        images.forEach((_, index) => {
+            const dot = document.createElement("span");
+            dot.classList.add("dot");
+            if (index === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        function updateCarousel() {
+            imgElement.src = images[currentIndex];
+            captionElement.textContent = captions[currentIndex];
+            const dots = document.querySelectorAll(".dot");
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === currentIndex);
+            });
+        }
 
         document.getElementById("prevButton").addEventListener("click", () => {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
-            imgElement.src = images[currentIndex];
+            updateCarousel();
         });
 
         document.getElementById("nextButton").addEventListener("click", () => {
             currentIndex = (currentIndex + 1) % images.length;
-            imgElement.src = images[currentIndex];
+            updateCarousel();
         });
 
         setInterval(() => {
             currentIndex = (currentIndex + 1) % images.length;
-            imgElement.src = images[currentIndex];
+            updateCarousel();
         }, 4000);
     </script>
 
