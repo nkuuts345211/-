@@ -26,8 +26,7 @@
                 
             </tr>
             <tr>
-                <td>選項</td>
-                <td><input type="text" name="option" autocomplete="off" required></td>
+                <td>option</td><td><select name='option'><option value='主餐'>主餐</option><option value='炸物'>炸物</option><option value='湯品'>湯品</option><option value='飲品'>飲品</option><option value='點心'>點心</option></select></td>
                 
             </tr>
             <tr>
