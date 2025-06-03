@@ -15,7 +15,9 @@
         }
 
         .menu-card {
-    height: 460px; /* 視需求調整 */
+   width: calc(20% - 20px); /* 每列 5 張圖，留出間距 */
+    box-sizing: border-box;
+    height: 460px;
     display: flex;
     flex-direction: column;
 }
