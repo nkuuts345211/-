@@ -119,6 +119,19 @@
         .menu-card-content input[type="submit"]:hover {
             background-color: #218838;
         }
+        .menu-card {
+    height: 360px;
+    border: 1px solid #ccc; /* 加上灰色邊框 */
+    border-radius: 10px;     /* 邊角圓滑 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 陰影效果 */
+    background-color: #fff;  /* 背景保持白色 */
+    overflow: hidden;        /* 防止內容溢出 */
+    transition: transform 0.2s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px); /* 滑鼠移過去有輕微浮起效果 */
+}
     </style>
 </head>
 <body>

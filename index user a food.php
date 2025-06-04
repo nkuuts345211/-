@@ -81,6 +81,24 @@
         .menu-card-content input[type="submit"]:hover {
             background-color: #218838;
         }
+        .sort {
+            text-align: center;
+            margin: 20px auto;
+        }
+        .menu-card {
+    height: 360px;
+    border: 1px solid #ccc; /* 加上灰色邊框 */
+    border-radius: 10px;     /* 邊角圓滑 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 陰影效果 */
+    background-color: #fff;  /* 背景保持白色 */
+    overflow: hidden;        /* 防止內容溢出 */
+    transition: transform 0.2s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px); /* 滑鼠移過去有輕微浮起效果 */
+}
+
     </style>
 </head>
 <body>
@@ -101,12 +119,15 @@
     <div colspan="5" class="Indicator" align="center">目前位置➝admin菜單</div>
         <tr align="center">
             <td  class="sort">
-                <button onclick="filterFood('all')">全部</button>
-                <button onclick="filterFood('主餐')">主餐</button>
-                <button onclick="filterFood('炸物')">炸物</button>
-                <button onclick="filterFood('湯品')">湯品</button>
-                <button onclick="filterFood('飲品')">飲品</button>
-                <button onclick="filterFood('點心')">點心</button>
+                <div class="sort">
+                    <button onclick="filterFood('all')">全部</button>
+                    <button onclick="filterFood('主餐')">主餐</button>
+                    <button onclick="filterFood('炸物')">炸物</button>
+                    <button onclick="filterFood('湯品')">湯品</button>
+                    <button onclick="filterFood('飲品')">飲品</button>
+                    <button onclick="filterFood('點心')">點心</button>
+                </div>
+
             </td>
         </tr>
     <div class="menu-container">
@@ -117,7 +138,6 @@
         $res = mysqli_query($link, $sql);
         if (mysqli_num_rows($res) > 0) {
             while ($row = mysqli_fetch_assoc($res)) {
-                echo "<div class='menu-card'>";
                 echo "<div class='food' data-category='".$row["option"]."'>";
                 echo "<div class='menu-card'>";
                 echo "<img src='img/" . $row['img'] . "' alt='" . $row['c_name'] . "'>";
@@ -130,9 +150,11 @@
                 echo "<input type='hidden' name='id' value='" . $row["id"] . "'>";
                 echo "<input type='submit' value='加入訂單'>";
                 echo "</form>";
-                echo "</div>";
-                echo "</div>";
+                echo "</div>"; // .menu-card-content
+                echo "</div>"; // .menu-card
+                echo "</div>"; // .food
             }
+
         }
         ?>
         </div>
