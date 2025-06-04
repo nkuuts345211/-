@@ -89,7 +89,7 @@ if(mysqli_num_rows($res)>0){
         echo "</tr>";                
         echo "<tr style='height:400px'><td colspan='2'>".'留言:'.$row["text"]."<br>";
         
-        // Display image if exists
+        // 顯示圖像（如果存在）
         if(!empty($row["img"])) {
             echo "<img src='msgimg/".$row["img"]."' style='max-width:300px; max-height:200px;'>";
         }
@@ -111,10 +111,10 @@ if(mysqli_num_rows($res)>0){
         echo "</tr>";
         echo "</table>";
         echo "</form>";
-        // Reply section
+        // 回覆部分
         echo "<div class='reply-section' style='width:700px; margin:0 auto;'>";
         
-        // Display existing replies
+        // 顯示現有回覆
         $reply_sql = "SELECT r.*, u.name FROM `reply` r LEFT JOIN `user` u ON r.account = u.account WHERE r.msg_id = ".$row['id']." ORDER BY r.add_time ASC";
         $reply_res = mysqli_query($link, $reply_sql);
         
@@ -125,7 +125,7 @@ if(mysqli_num_rows($res)>0){
                 echo "<strong>".($reply_row['name'] ? $reply_row['name'] : $reply_row['account'])."</strong> ";
                 echo "<small>(".$reply_row['add_time'].")</small>";
                 
-                // Add delete button for admin or reply owner
+                // 為管理員或回覆擁有者新增刪除按鈕
                 if( $_SESSION['account'] == $reply_row['account']) {
                     echo " <button onclick=\"if(confirm('確定要刪除這個回覆嗎？')) location.href='delete_reply.php?id=".$reply_row['id']."'\" style='background-color:#dc3545; color:white; border:none; padding:2px 5px; font-size:10px; border-radius:2px; cursor:pointer;'>刪除</button>";
                 }
@@ -138,7 +138,7 @@ if(mysqli_num_rows($res)>0){
             echo "<p style='color:#666;'>目前沒有回覆</p>";
         }
         
-        // Reply form (initially hidden)
+        // 回覆表單（初始隱藏）
         echo "<div id='reply-form-".$row['id']."' class='reply-form' style='display:none;'>";
         echo "<form action='add_reply.php' method='post'>";
         echo "<input type='hidden' name='msg_id' value='".$row['id']."'>";
