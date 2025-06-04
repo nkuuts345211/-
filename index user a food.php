@@ -6,28 +6,37 @@
     <title>管理者菜單</title>
     <link rel="stylesheet" href="style/food.css">
     <style>
-        .menu-container {
+        .menu-card {
+            height: 360px;
+        }
+        .food {
+            margin: 10px;
+            text-align: center;
+        }
+        .food-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
             margin-top: 20px;
         }
+        .food img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .sort {
+            text-align: center;
+            margin: 20px 0;
+        }
 
-        .menu-card {
-   width: calc(20% - 20px); /* 每列 5 張圖，留出間距 */
-    box-sizing: border-box;
-    height: 460px;
-    display: flex;
-    flex-direction: column;
-}
-
-        .menu-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
+        .sort button {
+            border-radius: 20px;
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
 
         .menu-card-content {
             padding: 15px;
@@ -89,15 +98,27 @@
     </div>
 
     <!-- 指示列 -->
-    <div class="Indicator" align="center">目前位置➝admin菜單</div>
-
+    <div colspan="5" class="Indicator" align="center">目前位置➝admin菜單</div>
+        <tr align="center">
+            <td  class="sort">
+                <button onclick="filterFood('all')">全部</button>
+                <button onclick="filterFood('主餐')">主餐</button>
+                <button onclick="filterFood('炸物')">炸物</button>
+                <button onclick="filterFood('湯品')">湯品</button>
+                <button onclick="filterFood('飲品')">飲品</button>
+                <button onclick="filterFood('點心')">點心</button>
+            </td>
+        </tr>
     <div class="menu-container">
+        <div class="food-container" id="foodContainer">
         <?php
         include("db.php");
         $sql = "SELECT * FROM `food`";
         $res = mysqli_query($link, $sql);
         if (mysqli_num_rows($res) > 0) {
             while ($row = mysqli_fetch_assoc($res)) {
+                echo "<div class='menu-card'>";
+                echo "<div class='food' data-category='".$row["option"]."'>";
                 echo "<div class='menu-card'>";
                 echo "<img src='img/" . $row['img'] . "' alt='" . $row['c_name'] . "'>";
                 echo "<div class='menu-card-content'>";
@@ -114,6 +135,22 @@
             }
         }
         ?>
+        </div>
+        <script>
+        function filterFood(category) {
+            const items = document.querySelectorAll(".food");
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // 預設顯示全部
+        filterFood('all');
+    </script>
     </div>
 </body>
 </html>
