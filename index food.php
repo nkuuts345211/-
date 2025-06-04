@@ -7,35 +7,9 @@
     <title>菜單</title>
     <link rel="stylesheet" href="style/food.css">
     <style>
-        img:hover {
-            transform: scale(1.2); /*圖片放1.2倍*/
-            transition: transform 0.3s ease;
+        .menu-card {
+            height: 360px;
         }
-
-        .dd {
-            position: fixed;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 20px;
-            display: none;
-            z-index: 1000;
-            text-align: left;
-        }
-        .dd-content {
-            display: flex; /* 水平排列圖片與文字 */
-            align-items: center; /* 垂直置中對齊 */
-            gap: 20px; /* 圖片與文字之間的間距 */
-        }
-
-        .dd button {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-        }
-
         .food {
             margin: 10px;
             text-align: center;
@@ -119,7 +93,13 @@
                         $price = $row['c_money'];
                         $desc = htmlspecialchars($row['text']);
                         echo "<div class='food' data-category='".$row["option"]."'>";
-                        echo "<img src='img/$img' onclick='check(\"$img\", \"$desc,價格:$price 元\")'>";
+                        echo "<div class='menu-card'>";
+                        echo "<img src='img/" . $row['img'] . "' alt='" . $row['c_name'] . "'>";
+                        echo "<div class='menu-card-content'>";
+                        echo "<h3>品名: " . htmlspecialchars($row['c_name']) . "</h3>";
+                        echo "<p>" . htmlspecialchars($row['text']) . "</p>";
+                        echo "</div>";
+                        echo "</div>";
                         echo "</div>";
                     }
                 } else {
@@ -133,16 +113,6 @@
     </table>
 
     <script>
-        function check(filename, text,price) {
-            const popup = document.querySelector(".dd");
-            document.getElementById("aa").src = "img/" + filename;
-            document.getElementById("desc").innerText = text;
-            popup.style.display = 'block';
-        }
-
-        function no() {
-            document.querySelector(".dd").style.display = 'none';
-        }
         function filterFood(category) {
             const items = document.querySelectorAll(".food");
             items.forEach(item => {
