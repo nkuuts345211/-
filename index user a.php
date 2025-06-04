@@ -31,7 +31,7 @@ if ($result) {
             font-family: "微軟正黑體", sans-serif;
         }
         .header {
-            background-color: #fb9600;
+            background-color:#fb9600;
             text-align: center;
             padding: 10px 0;
         }
@@ -63,8 +63,8 @@ if ($result) {
         }
         #myimg {
             width: 600px;
-            height: 80%;
-            object-fit: cover;
+            height: 400px;
+            object-fit: contain;
             transition: opacity 0.5s;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
