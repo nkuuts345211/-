@@ -43,7 +43,7 @@
             <td>password</td>
             <td>type</td>
             <td>編輯</td>
-        </tr>    
+        </tr> 
 <?php
 include ("db.php");
 $sql="SELECT * FROM `user` WHERE 1";
@@ -55,6 +55,7 @@ if(mysqli_num_rows($res)>0){
 
     }
     else{
+    echo "<form action='fix user.php' method='get'>";
     echo "<tr align='center'>";
     echo "<td>".$row["name"]."</td>";
     echo"<td>".$row["account"]."</td>";
@@ -62,6 +63,8 @@ if(mysqli_num_rows($res)>0){
     echo "<td>".$row["type"]."</td>";
     echo "<td><input type='button' value='修改(權限)' onclick=location.href='fix%20user.php?id=".$row['id']."'><input type='button' value='刪除' onclick=location.href='del%20user.php?id=".$row['id']."'></td>";
     echo "</tr>";
+    echo "<input type='hidden' name='id' value='".$row["id"]."'>";
+    echo "</form>";
     }
     }
 
