@@ -1,3 +1,9 @@
+  <?php include("db.php");
+    if (!isset($_SESSION['account'])) {
+    echo "<script>alert('請先登入！'); window.location.href='login.php';</script>";
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="zh-Hant">
     <head>
@@ -121,7 +127,7 @@
         <td class='content'>
         <div class="food-container" id="foodContainer">
             <?php
-            include ("db.php");
+            
             $sql="SELECT * FROM `food`";
             
                 $res=mysqli_query($link,$sql);

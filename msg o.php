@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <?php include("db.php")?>
+    <head>  <?php include("db.php");
+    if (!isset($_SESSION['account'])) {
+    echo "<script>alert('請先登入！'); window.location.href='login.php';</script>";
+    exit();
+}
+?>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>賣家留言板</title>

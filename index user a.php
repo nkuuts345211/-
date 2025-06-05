@@ -16,6 +16,11 @@ if ($result) {
 }
 
 
+?>  <?php 
+    if (!isset($_SESSION['account'])) {
+    echo "<script>alert('請先登入！'); window.location.href='login.php';</script>";
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant">

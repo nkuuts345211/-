@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
+<head>  <?php include("db.php");
+    if (!isset($_SESSION['account'])) {
+    echo "<script>alert('請先登入！'); window.location.href='login.php';</script>";
+    exit();
+}
+?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>使用者菜單</title>
@@ -77,7 +82,7 @@
         }
 
         .menu-card-content {
-            padding: 15px;
+            padding: 0px;
         }
 
         .menu-card-content h3 {
@@ -98,7 +103,7 @@
         }
 
         .menu-card-content form {
-            margin-top: 10px;
+            margin-top: 0px;
         }
 
         .menu-card-content input[type="number"] {
@@ -119,19 +124,8 @@
         .menu-card-content input[type="submit"]:hover {
             background-color: #218838;
         }
-        .menu-card {
-    height: 360px;
-    border: 1px solid #ccc; /* 加上灰色邊框 */
-    border-radius: 10px;     /* 邊角圓滑 */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 陰影效果 */
-    background-color: #fff;  /* 背景保持白色 */
-    overflow: hidden;        /* 防止內容溢出 */
-    transition: transform 0.2s ease;
-}
-
-.menu-card:hover {
-    transform: translateY(-4px); /* 滑鼠移過去有輕微浮起效果 */
-}
+        
+        
     </style>
 </head>
 <body>
@@ -155,17 +149,17 @@
 
     <div class="menu-container">
         <?php
-        include("db.php");
+        
         $sql = "SELECT * FROM `food`";
         $res = mysqli_query($link, $sql);
         if (mysqli_num_rows($res) > 0) {
             while ($row = mysqli_fetch_assoc($res)) {
                 echo "<div class='menu-card'>";
-                echo "<img class='menu-img' src='img/" . $row['img'] . "' alt='" . $row['c_name'] . "'>";
+                echo "<img class='menu-img' src='img/" . $row['img'] . "' alt='" . $row['option'] . "'>";
                 echo "<div class='menu-card-content'>";
                 echo "<h3>品名: " . htmlspecialchars($row['c_name']) . "</h3>";
                 echo "<p>" . htmlspecialchars($row['text']) . "</p>";
-                echo "<p class='price'>價格: $" . htmlspecialchars($row['c_money'] * 0.9) . "</p>";
+                echo "<p class='price'>價格: $" . htmlspecialchars($row['c_money'] *0.9) . "</p>";
                 echo "<form action='orderadd.php' method='post'>";
                 echo "數量: <input type='number' name='buy_amount' value='1' min='1' required>";
                 echo "<input type='hidden' name='id' value='" . $row["id"] . "'>";

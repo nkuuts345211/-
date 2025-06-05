@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>管理者菜單</title>
+      <?php include("db.php");
+    if (!isset($_SESSION['account'])) {
+    echo "<script>alert('請先登入！'); window.location.href='login.php';</script>";
+    exit();
+}
+?>
     <link rel="stylesheet" href="style/food.css">
     <style>
         .menu-card {
@@ -133,9 +139,10 @@
     <div class="menu-container">
         <div class="food-container" id="foodContainer">
         <?php
-        include("db.php");
         $sql = "SELECT * FROM `food`";
         $res = mysqli_query($link, $sql);
+        $total="SELECT * FROM `order`";
+        $kind=mysqli_query($link,$total);
         if (mysqli_num_rows($res) > 0) {
             while ($row = mysqli_fetch_assoc($res)) {
                 echo "<div class='food' data-category='".$row["option"]."'>";
@@ -146,7 +153,7 @@
                 echo "<p>" . htmlspecialchars($row['text']) . "</p>";
                 echo "<p class='price'>價格: $" . htmlspecialchars($row['c_money']) . "</p>";
                 echo "<form action='orderadd.php' method='post'>";
-                echo "數量: <input type='number' name='buy_amount' value='1' min='1' required>";
+                echo "數量: <input type='number' name='buy_amount' value='1' min='1' max='".$row["total"]."' required>";
                 echo "<input type='hidden' name='id' value='" . $row["id"] . "'>";
                 echo "<input type='submit' value='加入訂單'>";
                 echo "</form>";

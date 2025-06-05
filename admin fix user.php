@@ -1,3 +1,10 @@
+<?php
+include ("db.php");
+if (!isset($_SESSION['account'])) {
+    echo "<script>alert('請先登入！'); window.location.href='login.php';</script>";
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +28,7 @@
         text-decoration: none;
         color: white;
         font-size: 24px;
-        font-weight: bold;
+   font-weight: bold;
     }
 
 </style>
@@ -45,7 +52,7 @@
             <td>編輯</td>
         </tr> 
 <?php
-include ("db.php");
+
 $sql="SELECT * FROM `user` WHERE 1";
 $res=mysqli_query($link,$sql);
 

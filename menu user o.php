@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-    <head>
-        <?php include("db.php");?>
+    <head>  <?php include("db.php");
+    if (!isset($_SESSION['account'])) {
+    echo "<script>alert('請先登入！'); window.location.href='login.php';</script>";
+    exit();
+}
+?>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>賣家菜單編輯</title>
@@ -69,7 +73,7 @@ html {
                     echo "<td>".'編號:'.$row["c_num"]."</td>";
                     echo "</tr>";
                     echo "<tr style='height:400px'><td colspan='2'>"."<img src='img/".$row['img']."' style='width:300px'><br>".$row["text"].
-                     "<br>$$ : ".$row["c_money"]."</td></tr>";
+                     "<br>$$ : ".$row["c_money"]."|數量".$row["total"]."</td></tr>";
                     echo "<tr style='height:50px'>";
                     echo "<td>".'發佈時間:'.$row["add_time"]."</td>";
                         echo "<td><button type='button' onclick=location.href='add%20food%20user%20o.php?id=".$row['id']."'>修改</button><input type='button' value='刪除' onclick=location.href='del%20food.php?id=".$row['id']."'></td>";

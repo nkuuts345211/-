@@ -5,6 +5,7 @@ $c_num=$_POST["c_num"];
 $c_name=$_POST["c_name"];
 $c_money=$_POST["c_money"];
 $text=$_POST["text"];
+$number=$_POST["number"];
 $option=$_POST["option"];
 $account=$_SESSION["account"];
 $img=$_FILES["img"]["name"];
@@ -43,7 +44,7 @@ if (!in_array($imageFileType, $allowedTypes)) {
 // 將檔案移到指定資料夾
 if (move_uploaded_file($_FILES["img"]["tmp_name"], $targetFile)) {
    
-$sql="INSERT INTO `food`(`id`, `c_num`, `c_name`, `c_money`, `option`, `img`, `add_time`, `text`) VALUES  (null,'$c_num','$c_name','$c_money','$option','$img',NOW(),'$text')";
+$sql="INSERT INTO `food`(`id`, `c_num`, `c_name`, `c_money`, `total`, `option`, `img`, `add_time`, `text`) VALUES  (null,'$c_num','$c_name','$c_money', '$number' ,'$option','$img',NOW(),'$text')";
     mysqli_query($link,$sql);
       $name="SELECT * FROM `user` WHERE `account`='$account'";
         $add=mysqli_query($link,$name);
